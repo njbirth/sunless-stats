@@ -1,0 +1,29 @@
+[
+    Officer(
+        name: "Maybe's Daughter",
+        position: Engineer,
+        skills: Skills(
+            veils: 6,
+            iron: 3
+        ),
+        engine_power: 100
+    ),
+    Officer(
+        name: "Maybe's Rival",
+        position: Engineer,
+        skills: Skills(
+            veils: 7,
+            iron: 6
+        ),
+        engine_power: 150
+    ),
+    Officer(
+        name: "Nobody's Daughter",
+        position: Engineer,
+        skills: Skills(
+            veils: 7,
+            iron: 3
+        ),
+        engine_power: 100
+    ),
+]

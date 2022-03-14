@@ -1,0 +1,25 @@
+[
+    Shiptype(
+        name: "Maenad-class Frigate",
+        stats: Statistics(
+            weight: 3000,
+            hold: 70,
+            quarters: 25,
+            hull: 450,
+            skills: Skills(
+                iron: 5,
+                mirrors: 5,
+                veils: -5,
+            )
+        )
+    ),
+    Shiptype(
+        name: "Ligeia-class Steamer",
+        stats: Statistics(
+            weight: 1000,
+            hold: 40,
+            quarters: 10,
+            hull: 75
+        )
+    )
+]
