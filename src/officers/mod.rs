@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Serialize, Deserialize, Default)]
+#[derive(Debug, Serialize, Deserialize, Default, Clone)]
 #[serde(default)]
 pub struct Officers {
     pub cook: Option<Officer>,
@@ -52,7 +52,7 @@ impl Officers {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize, Default)]
+#[derive(Debug, Serialize, Deserialize, Default, Clone)]
 #[serde(default)]
 pub struct Officer {
     pub name: String,
@@ -62,7 +62,7 @@ pub struct Officer {
     pub fuel_efficiency: i32,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub enum Position {
     Cook,
     Engineer,

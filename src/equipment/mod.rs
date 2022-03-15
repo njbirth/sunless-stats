@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 
 use crate::Skills;
 
-#[derive(Debug, Deserialize, Serialize, Default)]
+#[derive(Debug, Deserialize, Serialize, Default, Clone)]
 #[serde(default)]
 pub struct EquipmentSlots {
     pub deck: Option<Equipment>,
@@ -54,7 +54,7 @@ impl EquipmentSlots {
     }
 }
 
-#[derive(Debug, Deserialize, Serialize, Default)]
+#[derive(Debug, Deserialize, Serialize, Default, Clone)]
 #[serde(default)]
 pub struct Equipment {
     pub name: String,
@@ -66,7 +66,7 @@ pub struct Equipment {
     pub quarters: i32
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize, Clone)]
 pub enum Slot {
     Deck,
     Forward,
@@ -80,7 +80,7 @@ impl Default for Slot {
     fn default() -> Self { Slot::Auxiliary }
 }
 
-#[derive(Debug, Deserialize, Serialize, Default)]
+#[derive(Debug, Deserialize, Serialize, Default, Clone)]
 #[serde(default)]
 pub struct Damage {
     pub hull: f32,

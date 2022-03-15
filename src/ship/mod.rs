@@ -8,6 +8,8 @@ pub use shiptype::Shiptype;
 mod statistics;
 pub use statistics::Statistics;
 
+#[derive(Default, Clone)]
+// TODO: Implement Default properly
 pub struct Ship {
     pub shiptype: Shiptype,
     pub captain_skills: Skills,
