@@ -1,5 +1,66 @@
 [
     Shiptype(
+        name: "Stymphalos-class Steam Launch",
+        stats: Statistics(
+            weight: 500,
+            hold: 5,
+            quarters: 4,
+            hull: 1,
+            skills: Skills(
+                iron: -20,
+                veils: 2,
+            )
+        )
+    ),
+    Shiptype(
+        name: "Ligeia-class Steamer",
+        stats: Statistics(
+            weight: 1000,
+            hold: 40,
+            quarters: 10,
+            hull: 75
+        )
+    ),
+    Shiptype(
+        name: "Lampad-class Cutter",
+        stats: Statistics(
+            weight: 300,
+            hold: 30,
+            quarters: 5,
+            hull: 50,
+            skills: Skills(
+                veils: 10,
+                mirrors: 5,
+                iron: -10
+            )
+        )
+    ),
+    Shiptype(
+        name: "Phorcyd-class Corvette",
+        stats: Statistics(
+            weight: 2000,
+            hold: 40,
+            quarters: 15,
+            hull: 200,
+            skills: Skills(
+                iron: 5
+            )
+        )
+    ),
+    Shiptype(
+        name: "Caligo-class Merchant Cruiser",
+        stats: Statistics(
+            weight: 5000,
+            hold: 120,
+            quarters: 30,
+            hull: 300,
+            skills: Skills(
+                veils: -5,
+                hearts: 5
+            )
+        )
+    ),
+    Shiptype(
         name: "Maenad-class Frigate",
         stats: Statistics(
             weight: 3000,
@@ -14,12 +75,49 @@
         )
     ),
     Shiptype(
-        name: "Ligeia-class Steamer",
+        name: "Eschatologue-class dreadnaught",
         stats: Statistics(
-            weight: 1000,
-            hold: 40,
-            quarters: 10,
-            hull: 75
+            weight: 5000,
+            hold: 100,
+            quarters: 40,
+            hull: 600,
+            skills: Skills(
+                veils: -25,
+                mirrors: 5,
+                iron: 25
+            )
         )
-    )
+    ),
+    Shiptype(
+        name: "Leucothea-class Steam-Yacht",
+        stats: Statistics(
+            weight: 3000,
+            hold: 70,
+            quarters: 20,
+            hull: 250,
+            skills: Skills(
+                hearts: 10,
+                veils: 10,
+                pages: 10,
+                mirrors: 10
+            )
+        )
+    ),
+    Shiptype(
+        name: "Cladery Heart",
+        stats: Statistics(
+            weight: 4000,
+            hold: 80,
+            quarters: 35,
+            hull: 450,
+            engine_power: 500,
+            skills: Skills(
+                iron: 5,
+                mirrors: 10,
+                veils: 10,
+                pages: 10,
+                hearts: 10
+            )
+        )
+    ),
 ]

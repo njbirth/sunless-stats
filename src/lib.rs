@@ -10,7 +10,7 @@ pub mod officers;
 pub mod data;
 pub mod gui;
 
-#[derive(Debug, Deserialize, Serialize, Default, Clone)]
+#[derive(Debug, Deserialize, Serialize, Default, Clone, PartialEq, Eq)]
 #[serde(default)]
 pub struct Skills {
     pub iron: i32,

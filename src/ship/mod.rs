@@ -1,6 +1,7 @@
 use crate::equipment::EquipmentSlots;
 use crate::officers::Officers;
 use crate::Skills;
+use crate::data::*;
 
 mod shiptype;
 pub use shiptype::Shiptype;
@@ -8,7 +9,7 @@ pub use shiptype::Shiptype;
 mod statistics;
 pub use statistics::Statistics;
 
-#[derive(Default, Clone)]
+#[derive(Clone)]
 // TODO: Implement Default properly
 pub struct Ship {
     pub shiptype: Shiptype,
@@ -39,5 +40,23 @@ impl Ship {
         let engine_power = self.engine_power() as f32;
 
         (((engine_power * 0.0005) * (1. - fuel_efficiency)) * speed) + light
+    }
+}
+
+impl Default for Ship {
+    fn default() -> Self {
+        Ship {
+            shiptype: SHIPTYPES[1].clone(),
+            captain_skills: Skills {
+                iron: 25,
+                veils: 25,
+                mirrors: 25,
+                pages: 25,
+                hearts: 25
+            },
+            equipment: EquipmentSlots::default(),
+            officers: Officers::default(),
+            crew: SHIPTYPES[1].stats.quarters
+        }
     }
 }

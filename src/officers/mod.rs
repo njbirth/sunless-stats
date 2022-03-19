@@ -1,3 +1,5 @@
+use std::fmt;
+use std::fmt::{Display, Formatter};
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize, Default, Clone)]
@@ -52,7 +54,7 @@ impl Officers {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize, Default, Clone)]
+#[derive(Debug, Serialize, Deserialize, Default, Clone, PartialEq, Eq)]
 #[serde(default)]
 pub struct Officer {
     pub name: String,
@@ -62,7 +64,13 @@ pub struct Officer {
     pub fuel_efficiency: i32,
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+impl Display for Officer {
+    fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+        write!(f, "{}", self.name)
+    }
+}
+
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Eq)]
 pub enum Position {
     Cook,
     Engineer,
