@@ -1,90 +1,52 @@
-use iced::{Alignment, Column, Container, Element, Length, pick_list, PickList, Row, Rule, Sandbox, Text};
+pub mod stats;
 
-use crate::ship::{Ship, Shiptype};
+use std::fmt::Display;
+use dioxus::prelude::*;
 use crate::data::*;
-use crate::equipment::{Equipment, Slot};
-use crate::officers::{Officer, Position};
+use crate::ship::{Ship, Shiptype};
 
-#[derive(Default)]
-pub struct SunlessStats {
-    ship: Ship,
-    pick_list_shiptype: pick_list::State<Shiptype>,
-    pick_list_first_officer: pick_list::State<Officer>
-}
+pub fn app(cx: Scope) -> Element {
+    let ship = use_ref(&cx, || Ship::default());
 
-#[derive(Debug, Clone)]
-pub enum Message {
-    ChangeShiptype(Shiptype),
-    ChangeEquipment(Equipment, Slot),
-    ChangeOfficer(Officer, Position),
-    Nothing
-}
+    cx.render(rsx! {
+        style { [include_str!("../../css/tailwind.min.css")] }
+        style { [include_str!("../../css/daisyui.css")] }
 
-impl Sandbox for SunlessStats {
-    type Message = Message;
-
-    fn new() -> Self {
-        Self::default()
-    }
-
-    fn title(&self) -> String {
-        String::from("Sunless Stats")
-    }
-
-    fn update(&mut self, message: Message) {
-        match message {
-            Message::ChangeShiptype(shiptype) => {
-                self.ship.shiptype = shiptype;
+        div {
+            padding: "20px",
+            class: "flex flex-row",
+            div {
+                class: "basis-1/3",
+                select {
+                    class: "select select-bordered select-sm w-full max-w-xs",
+                    onchange: |evt| {
+                        ship.with_mut(|s| s.shiptype = SHIPTYPES[evt.data.value.parse::<usize>().unwrap()].clone())
+                    },
+                    self::select_options { arr: stringvec(&SHIPTYPES) }
+                },
             },
-            Message::ChangeEquipment(_, _) => {
-
-            },
-            Message::ChangeOfficer(_, _) => {
-
-            },
-            Message::Nothing => { }
+            div {
+                class: "basis-1/3",
+                stats::stats { ship: ship.clone() }
+            }
         }
-    }
+    })
+}
 
-    fn view(&mut self) -> Element<Message> {
-        Column::new()
-            .padding(20)
-            .spacing(5)
-            .width(Length::Units(500))
-            .push(
-                Row::new()
-                    .spacing(10)
-                    .align_items(Alignment::Center)
-                    .push(Text::new("Ship").width(Length::FillPortion(2)))
-                    .push(
-                        PickList::new(
-                            &mut self.pick_list_shiptype,
-                            &*SHIPTYPES,
-                            Some(self.ship.shiptype.clone()),
-                            |shiptype: Shiptype| { Message::ChangeShiptype(shiptype) }
-                        )
-                            .width(Length::FillPortion(5))
-                    )
-            )
-            .push(Rule::horizontal(20))
-            .push(
-                Row::new()
-                    .spacing(10)
-                    .align_items(Alignment::Center)
-                    .push(Text::new("First Officer").width(Length::FillPortion(2)))
-                    .push(
-                        PickList::new(
-                            &mut self.pick_list_first_officer,
-                            &*OFFICERS,
-                            self.ship.officers.first_officer.clone(),
-                            |officer: Officer| { Message::ChangeOfficer(officer, Position::FirstOfficer) }
-                        ).width(Length::FillPortion(5)).placeholder("No ship")
-                    )
-            )
-            .push(Rule::horizontal(20))
-            .push(
-                Text::new(format!("Weight: {}", self.ship.shiptype.stats.weight))
-            )
-            .into()
-    }
+#[inline_props]
+fn select_options(cx: Scope, arr: Vec<String>) -> Element {
+    cx.render(rsx! {
+        arr.iter().enumerate().map(|(idx, ship)| {
+            rsx!{
+                option {
+                    value: "{idx}",
+                    [format_args!("{ship}")]
+                }
+            }
+        })
+    })
+}
+
+fn stringvec(v: &Vec<impl Display>) -> Vec<String> {
+    v.iter().map(|s| s.to_string()).collect()
 }

@@ -1,10 +1,11 @@
-use iced::{Sandbox, Settings};
-use sunless_stats::data::*;
+use sunless_stats::gui::app;
 
 fn main() {
-    dbg!(&*SHIPTYPES);
-    dbg!(&*OFFICERS);
-    dbg!(&*EQUIPMENT);
-
-    sunless_stats::gui::SunlessStats::run(Settings::default()).ok();
+    dioxus::desktop::launch_cfg(
+        app,
+        |c|
+            c.with_window(
+                |w| w.with_title("Sunless Stats")
+            )
+    );
 }

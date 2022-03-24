@@ -9,4 +9,4 @@ edition = "2021"
 ron = "0.7"
 serde = { version = "1", features = ["derive"] }
 lazy_static = "1.4.0"
-iced = { git = "https://github.com/iced-rs/iced" }
+dioxus = { version = "0.2.3", features = ["desktop"] }
