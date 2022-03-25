@@ -2,7 +2,7 @@ use dioxus::prelude::*;
 use crate::ship::Ship;
 
 #[inline_props]
-pub fn stats(cx: Scope, ship: UseRef<Ship>) -> Element {
+pub fn stats<'a>(cx: Scope, ship: &'a UseRef<Ship>) -> Element {
     let ship = ship.read();
 
     let weight = ship.shiptype.stats.weight;

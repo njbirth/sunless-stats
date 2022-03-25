@@ -9,7 +9,7 @@ pub use shiptype::Shiptype;
 mod statistics;
 pub use statistics::Statistics;
 
-#[derive(Clone)]
+#[derive(Clone, PartialEq)]
 // TODO: Implement Default properly
 pub struct Ship {
     pub shiptype: Shiptype,
