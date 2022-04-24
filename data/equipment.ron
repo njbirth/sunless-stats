@@ -1,3 +1,393 @@
 [
-
+    Equipment(
+        name: "Leadbeater & Stainrod 'Seaworm'",
+        slot: Forward,
+        damage: Damage(
+            hull: 24,
+            life: 24,
+            crew: 1,
+            warmup: 4,
+            stagger: 4
+        ),
+    ),
+    Equipment(
+        name: "Leadbeater & Stainrod 'Britomart' Flensing-Cannon",
+        slot: Forward,
+        damage: Damage(
+            hull: 14,
+            life: 22,
+            crew: 2,
+            warmup: 4,
+            stagger: 0
+        ),
+    ),
+    Equipment(
+        name: "Leadbeater & Stainrod 'Winnower'",
+        slot: Forward,
+        damage: Damage(
+            hull: 28,
+            life: 28,
+            crew: 2,
+            warmup: 4,
+            stagger: 6
+        ),
+    ),
+    Equipment(
+        name: "Cotterell & Hathersage 'Majesty'",
+        slot: Forward,
+        damage: Damage(
+            hull: 22,
+            life: 22,
+            crew: 2,
+            warmup: 4,
+            stagger: 2
+        ),
+    ),
+    Equipment(
+        name: "Stampshod's 'Calvary' Prong Launcher",
+        slot: Forward,
+        damage: Damage(
+            hull: 16,
+            life: 24,
+            crew: 2,
+            warmup: 4,
+            stagger: 0
+        ),
+    ),
+    Equipment(
+        name: "Cotterell & Hathersage Pneumatic Dynamite Torpedo-Gun",
+        slot: Forward,
+        damage: Damage(
+            hull: 24,
+            life: 24,
+            crew: 1,
+            warmup: 4,
+            stagger: 4
+        ),
+    ),
+    Equipment(
+        name: "Caminus Yards 'Bandersnatch'",
+        slot: Forward,
+        damage: Damage(
+            hull: 34,
+            life: 34,
+            crew: 4,
+            warmup: 4,
+            stagger: 8
+        ),
+    ),
+    Equipment(
+        name: "Caminus Yards Heart-Ender",
+        slot: Forward,
+        damage: Damage(
+            hull: 20,
+            life: 28,
+            crew: 3,
+            warmup: 4,
+            stagger: 2
+        ),
+    ),
+    Equipment(
+        name: "Memento Mori",
+        slot: Forward,
+        skills: Skills(
+            iron: 6,
+            mirrors: 3
+        ),
+        damage: Damage(
+            hull: 24,
+            life: 32,
+            crew: 4,
+            warmup: 4,
+            stagger: 2
+        ),
+    ),
+    Equipment(
+        name: "Icarus in Black",
+        slot: Forward,
+        damage: Damage(
+            hull: 50,
+            life: 500,
+            crew: 0,
+            warmup: 5,
+            stagger: 6
+        ),
+    ),
+    Equipment(
+        name: "Leadbeater & Stainrod Reconditioned Frigate-Surplus Deck-Gun Mark II",
+        slot: Deck,
+        damage: Damage(
+            hull: 8,
+            life: 8,
+            crew: 1,
+            warmup: 4,
+            stagger: 0
+        ),
+    ),
+    Equipment(
+        name: "Cotterell & Hathersage 'Reproach'",
+        slot: Deck,
+        damage: Damage(
+            hull: 12,
+            life: 12,
+            crew: 1,
+            warmup: 4,
+            stagger: 0
+        ),
+    ),
+    Equipment(
+        name: "Cotterell & Hathersage 'Denunciation'",
+        slot: Deck,
+        damage: Damage(
+            hull: 15,
+            life: 15,
+            crew: 1,
+            warmup: 4,
+            stagger: 0
+        ),
+    ),
+    Equipment(
+        name: "Caminus Yards Hellthrasher",
+        slot: Deck,
+        damage: Damage(
+            hull: 18,
+            life: 18,
+            crew: 2,
+            warmup: 4,
+            stagger: 0
+        ),
+    ),
+    Equipment(
+        name: "Whithern Optical",
+        slot: Bridge,
+        skills: Skills(
+            mirrors: 1
+        )
+    ),
+    Equipment(
+        name: "Soft Glim-Lamp",
+        slot: Bridge,
+        skills: Skills(
+            mirrors: 3,
+            veils: -1
+        )
+    ),
+    Equipment(
+        name: "Blazing Glim-Lamp",
+        slot: Bridge,
+        skills: Skills(
+            mirrors: 5,
+            veils: -3
+        )
+    ),
+    Equipment(
+        name: "Montaigne Projector",
+        slot: Bridge,
+        skills: Skills(
+            mirrors: 10,
+            veils: -10
+        )
+    ),
+    Equipment(
+        name: "Speculative Consonator",
+        slot: Bridge,
+        skills: Skills(
+            mirrors: 4,
+        )
+    ),
+    Equipment(
+        name: "Judgement Resonator",
+        slot: Bridge,
+        skills: Skills(
+            mirrors: 6,
+        )
+    ),
+    Equipment(
+        name: "Awakened Seal of the Red Science",
+        slot: Bridge,
+        skills: Skills(
+            mirrors: 3,
+            iron: 3
+        )
+    ),
+    Equipment(
+        name: "Torpedo Nets",
+        slot: Auxiliary
+    ),
+    Equipment(
+        name: "Caminus Yards Pneumatic Ratsender",
+        slot: Auxiliary
+    ),
+    Equipment(
+        name: "WE ARE CLAY",
+        slot: Auxiliary,
+        quarters: -3,
+        skills: Skills(
+            iron: 5
+        ),
+        engine_power: 250
+    ),
+    Equipment(
+        name: "Anatomical Cabinet",
+        slot: Auxiliary,
+        skills: Skills(
+            iron: 7
+        )
+    ),
+    Equipment(
+        name: "Monstrous Almanac",
+        slot: Auxiliary,
+        skills: Skills(
+            pages: 7
+        )
+    ),
+    Equipment(
+        name: "Serene Aquarium",
+        slot: Auxiliary,
+        skills: Skills(
+            mirrors: 7
+        )
+    ),
+    Equipment(
+        name: "Shrine to Stone",
+        slot: Auxiliary,
+        skills: Skills(
+            hearts: 7
+        )
+    ),
+    Equipment(
+        name: "Whispering Trophy-Case",
+        slot: Auxiliary,
+        skills: Skills(
+            veils: 7
+        )
+    ),
+    Equipment(
+        name: "A Banner of Coming Glory",
+        slot: Auxiliary,
+        skills: Skills(
+            pages: 3,
+            iron: 3,
+            mirrors: 3,
+            veils: 3,
+            hearts: 10
+        )
+    ),
+    Equipment(
+        name: "The Zong of the Zee",
+        slot: Auxiliary,
+        skills: Skills(
+            pages: 10,
+            iron: 10,
+            mirrors: 10,
+            veils: 10,
+            hearts: 10
+        )
+    ),
+    Equipment(
+        name: "Elderly Steeple-Engine",
+        slot: Engine,
+        engine_power: 800
+    ),
+    Equipment(
+        name: "Leadbeater & Stainrod 'Illyrian'",
+        slot: Engine,
+        engine_power: 1000
+    ),
+    Equipment(
+        name: "Leadbeater & Stainrod 'Boadicea'",
+        slot: Engine,
+        engine_power: 1500
+    ),
+    Equipment(
+        name: "Cotterell & Hathersage 'Manticore No.4'",
+        slot: Engine,
+        engine_power: 2000
+    ),
+    Equipment(
+        name: "Cotterell & Hathersage 'Admiralty Special'",
+        slot: Engine,
+        engine_power: 2500
+    ),
+    Equipment(
+        name: "Caminus Yards 'Compulsion'",
+        slot: Engine,
+        engine_power: 3500
+    ),
+    Equipment(
+        name: "The Serpentine",
+        slot: Engine,
+        engine_power: 1800,
+        fuel_efficiency: 10,
+        skills: Skills(
+            hearts: 5,
+            veils: 5
+        )
+    ),
+    Equipment(
+        name: "The Fulgent Impeller",
+        slot: Engine,
+        engine_power: 5000,
+        fuel_efficiency: 50,
+        skills: Skills(
+            iron: 5,
+            mirrors: 5
+        )
+    ),
+    Equipment(
+        name: "Leadbeater & Stainrod 'Scorpion'",
+        slot: Aft,
+        damage: Damage(
+            hull: 22,
+            life: 22,
+            crew: 1,
+            warmup: 6,
+            stagger: 6
+        )
+    ),
+    Equipment(
+        name: "Cotterell & Hathersage 'Discouragement'",
+        slot: Aft,
+        damage: Damage(
+            hull: 24,
+            life: 24,
+            crew: 1,
+            warmup: 6,
+            stagger: 8
+        )
+    ),
+    Equipment(
+        name: "Caminus Yards 'D__nation'",
+        slot: Aft,
+        damage: Damage(
+            hull: 28,
+            life: 28,
+            crew: 2,
+            warmup: 6,
+            stagger: 8
+        )
+    ),
+    Equipment(
+        name: "Caminus Yards Avid Suppressor",
+        slot: Aft,
+        skills: Skills(
+            veils: 3
+        )
+    ),
+    Equipment(
+        name: "Concealed Compartment",
+        slot: Aft
+    ),
+    Equipment(
+        name: "Secure Compartment",
+        slot: Aft
+    ),
+    Equipment(
+        name: "Milebreaker",
+        slot: Aft,
+        fuel_efficiency: 10,
+        skills: Skill(
+            hearts: -10
+        )
+    )
 ]

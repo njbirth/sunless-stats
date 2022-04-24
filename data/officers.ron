@@ -1,5 +1,99 @@
 [
     Officer(
+        name: "Bandaged Poissonnier",
+        position: Cook,
+        skills: Skills(
+            hearts: 6,
+            pages: 3
+        )
+    ),
+    Officer(
+        name: "Bandaged Chef-Paramount",
+        position: Cook,
+        skills: Skills(
+            hearts: 9,
+            pages: 5
+        )
+    ),
+    Officer(
+        name: "Nacreous Outcast",
+        position: Cook,
+        skills: Skills(
+            hearts: 4,
+            pages: 2,
+            mirrors: 2
+        )
+    ),
+    Officer(
+        name: "Nacreous Survivor",
+        position: Cook,
+        skills: Skills(
+            hearts: 8,
+            pages: 4,
+            mirrors: 4
+        )
+    ),
+    Officer(
+        name: "Shady Cook",
+        position: Cook,
+        skills: Skills(
+            hearts: 1,
+        )
+    ),
+    Officer(
+        name: "Scrimshaw Chronicler",
+        position: Cook,
+        skills: Skills(
+            hearts: -1,
+            iron: 3,
+            pages: 3,
+            mirrors: 3
+        )
+    ),
+    Officer(
+        name: "Gall-Eyed Engineer",
+        position: Engineer,
+        skills: Skills(
+            veils: 1,
+        ),
+    ),
+    Officer(
+        name: "Genial Magician",
+        position: Engineer,
+        skills: Skills(
+            hearts: -1,
+            veils: 6,
+            mirrors: 3
+        ),
+    ),
+    Officer(
+        name: "Prudent Magician",
+        position: Engineer,
+        skills: Skills(
+            veils: 6,
+            mirrors: 4
+        ),
+    ),
+    Officer(
+        name: "The Satisfied Magician",
+        position: Engineer,
+        skills: Skills(
+            veils: 6,
+            mirrors: 5,
+            hearts: 1
+        ),
+    ),
+    Officer(
+        name: "The Urbane Magician",
+        position: Engineer,
+        skills: Skills(
+            veils: 8,
+            mirrors: 6,
+            hearts: -2,
+            pages: 3
+        ),
+    ),
+    Officer(
         name: "Maybe's Daughter",
         position: Engineer,
         skills: Skills(
@@ -26,4 +120,252 @@
         ),
         engine_power: 100
     ),
+    Officer(
+        name: "Tireless Mechanic",
+        position: Engineer,
+        skills: Skills(
+            veils: 8
+        ),
+        fuel_efficiency: 5
+    ),
+    Officer(
+        name: "Carnelian Exile",
+        position: FirstOfficer,
+        skills: Skills(
+            mirrors: 6,
+            pages: 3
+        )
+    ),
+    Officer(
+        name: "The Merciless Modiste",
+        position: FirstOfficer,
+        skills: Skills(
+            iron: 8,
+            veils: 3,
+            hearts: 1
+        )
+    ),
+    Officer(
+        name: "Sigil-Ridden Navigator",
+        position: FirstOfficer,
+        skills: Skills(
+            mirrors: 6,
+            veils: 3
+        )
+    ),
+    Officer(
+        name: "Sigil-Eaten Navigator",
+        position: FirstOfficer,
+        skills: Skills(
+            mirrors: 9,
+            veils: 5
+        )
+    ),
+    Officer(
+        name: "Sly Navigator",
+        position: FirstOfficer,
+        skills: Skills(
+            mirrors: 1
+        )
+    ),
+    Officer(
+        name: "Your Father",
+        position: FirstOfficer,
+        skills: Skills(
+            hearts: 1,
+            veils: 1
+        )
+    ),
+    Officer(
+        name: "Irrepressible Cannoneer",
+        position: Gunner,
+        skills: Skills(
+            iron: 8
+        )
+    ),
+    Officer(
+        name: "Longshanks Gunner",
+        position: Gunner,
+        skills: Skills(
+            iron: 1
+        )
+    ),
+    Officer(
+        name: "Presbyterate Adventuress",
+        position: Gunner,
+        skills: Skills(
+            iron: 6,
+            veils: 3
+        )
+    ),
+    Officer(
+        name: "Wistful Deviless",
+        position: Gunner,
+        skills: Skills(
+            iron: 1
+        )
+    ),
+    Officer(
+        name: "Brisk Campaigner",
+        position: Surgeon,
+        skills: Skills(
+            hearts: 6,
+            iron: 3,
+
+        )
+    ),
+    Officer(
+        name: "Indomitable Campaigner",
+        position: Surgeon,
+        skills: Skills(
+            hearts: 9,
+            iron: 5
+        )
+    ),
+    Officer(
+        name: "Cladery Heir",
+        position: Surgeon,
+        skills: Skills(
+            hearts: 6,
+            iron: 6
+        )
+    ),
+    Officer(
+        name: "Haunted Doctor",
+        position: Surgeon,
+        skills: Skills(
+            hearts: 6,
+            pages: 3
+        )
+    ),
+    Officer(
+        name: "Determined Doctor",
+        position: Surgeon,
+        skills: Skills(
+            hearts: 9,
+            pages: 3
+        )
+    ),
+    Officer(
+        name: "Disillusioned Doctor",
+        position: Surgeon,
+        skills: Skills(
+            hearts: 6,
+            pages: 6
+        )
+    ),
+    Officer(
+        name: "The Lady in Lilac",
+        position: Surgeon,
+        skills: Skills(
+            hearts: 6,
+            pages: 6,
+            mirrors: 6
+        )
+    ),
+    Officer(
+        name: "Plausible Surgeon",
+        position: Surgeon,
+        skills: Skills(
+            hearts: 1,
+            pages: 1
+        )
+    ),
+    Officer(
+        name: "The Scarred Sister",
+        position: Surgeon,
+        skills: Skills(
+            hearts: 5
+        )
+    ),
+    Officer(
+        name: "Albino Tinkerer",
+        position: Mascot,
+        skills: Skills(
+            veils: 2
+        )
+    ),
+    Officer(
+        name: "Comatose Ferret",
+        position: Mascot,
+        skills: Skills(
+            hearts: 1
+        )
+    ),
+    Officer(
+        name: "Elegiac Cockatoo",
+        position: Mascot,
+        skills: Skills(
+            mirrors: 2
+        )
+    ),
+    Officer(
+        name: "Eyeless Skull",
+        position: Mascot,
+        skills: Skills(
+            mirrors: -2,
+            veils: 4
+        )
+    ),
+    Officer(
+        name: "Guinea Page",
+        position: Mascot,
+        skills: Skills(
+            pages: 2
+        )
+    ),
+    Officer(
+        name: "Keeper-Moth",
+        position: Mascot,
+        skills: Skills(
+            hearts: -2,
+            mirrors: 3,
+            veils: 3,
+            pages: 3
+        )
+    ),
+    Officer(
+        name: "Monkey Foundling",
+        position: Mascot,
+        skills: Skills(
+            hearts: 5
+        )
+    ),
+    Officer(
+        name: "Parabolan Kitten",
+        position: Mascot,
+        skills: Skills(
+            hearts: 2
+        )
+    ),
+    Officer(
+        name: "Parabolan Panther",
+        position: Mascot,
+        skills: Skills(
+            hearts: 3,
+            mirrors: 2
+        )
+    ),
+    Officer(
+        name: "Vigilant Idol",
+        position: Mascot,
+        skills: Skills(
+            mirrors: 4
+        )
+    ),
+    Officer(
+        name: "Wretched Mog",
+        position: Mascot,
+        skills: Skills(
+            iron: 2
+        )
+    ),
+    Officer(
+        name: "Blemmigan Gallivanter",
+        position: Mascot,
+        skills: Skills(
+            mirrors: 3,
+            pages: 2
+        )
+    )
 ]
