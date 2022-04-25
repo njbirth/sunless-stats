@@ -1,5 +1,6 @@
 pub mod stats;
 pub mod ship_config;
+pub mod modal;
 
 use std::fmt::Display;
 use dioxus::prelude::*;
@@ -12,20 +13,22 @@ pub fn app(cx: Scope) -> Element {
     cx.render(rsx! {
         style { [include_str!("../../css/tailwind.min.css")] }
         style { [include_str!("../../css/daisyui.css")] }
+        style { [include_str!("../../css/styles.css")] }
 
         div {
             padding: "20px",
-            class: "flex flex-row",
+            class: "flex flex-col",
+            width: "35%",
 
             div {
-                class: "basis-1/2",
                 ship_config::ship_config { ship: ship },
             }
 
-            /*div {
-                class: "basis-1/2",
+            div {
                 stats::stats { ship: ship }
-            }*/
+            }
+
+            modal::modal {  }
         }
     })
 }

@@ -10,12 +10,16 @@ pub fn stats<'a>(cx: Scope, ship: &'a UseRef<Ship>) -> Element {
     let quarters = ship.shiptype.stats.quarters;
 
     cx.render(rsx! {
-        table {
-            class: "table table-compact",
-            tbody {
-                tr { td { "Weight:" }, td { "{weight}" } },
-                tr { td { "Engine Power:" }, td { "{engine_power}" } },
-                tr { td { "Quarters:" }, td { "{quarters}" } }
+        div {
+            class: "border-2 mt-4 p-2",
+
+            table {
+                class: "table table-compact",
+                tbody {
+                    tr { td { "Weight:" }, td { "{weight}" } },
+                    tr { td { "Engine Power:" }, td { "{engine_power}" } },
+                    tr { td { "Quarters:" }, td { "{quarters}" } }
+                }
             }
         }
     })

@@ -83,3 +83,18 @@ pub enum Position {
 impl Default for Position {
     fn default() -> Self { Position::Mascot }
 }
+
+impl Display for Position {
+    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
+        let s = match self {
+            Position::Cook => "Cook",
+            Position::Engineer => "Chief Engineer",
+            Position::FirstOfficer => "First Officer",
+            Position::Gunner => "Gunnery Officer",
+            Position::Surgeon => "Surgeon",
+            Position::Mascot => "Mascot"
+        };
+
+        write!(f, "{}", s)
+    }
+}

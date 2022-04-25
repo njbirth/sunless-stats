@@ -1,122 +1,62 @@
-use std::fmt::Display;
 use dioxus::prelude::*;
 use crate::data::*;
-use crate::ship::{Ship, Shiptype};
-use super::{select_options, stringvec};
+use crate::ship::Ship;
+use crate::officers::Position;
+use crate::gui::modal::{Modal, MODAL, Selected};
 
 #[inline_props]
 pub fn officers<'a>(cx: Scope, ship: &'a UseRef<Ship>) -> Element {
-    let select_class = "select select-bordered select-sm w-full max-w-xs";
-
     cx.render(rsx! {
         div {
-            fieldset {
-                class: "border-2 rounded p-2",
-                legend { "Officers" },
+            class: "grid grid-cols-3 justify-items-center",
 
-                div {
-                    class: "form-control w-full max-w-xs",
-
-                    label {
-                        class: "label",
-                        span { class: "label-text-alt", "First Officer" }
-                    }
-
-                    select {
-                        class: "{select_class}",
-                        onchange: |evt| {
-                            ship.with_mut(|s| s.shiptype = SHIPTYPES[evt.data.value.parse::<usize>().unwrap()].clone())
-                        },
-                        self::select_options { arr: stringvec(&OFFICERS) }
-                    },
-                }
-
-                div {
-                    class: "form-control w-full max-w-xs",
-
-                    label {
-                        class: "label",
-                        span { class: "label-text-alt", "Chief Engineer" }
-                    }
-
-                    select {
-                        class: "{select_class}",
-                        onchange: |evt| {
-                            ship.with_mut(|s| s.shiptype = SHIPTYPES[evt.data.value.parse::<usize>().unwrap()].clone())
-                        },
-                        self::select_options { arr: stringvec(&OFFICERS) }
-                    },
-                }
-
-                div {
-                    class: "form-control w-full max-w-xs",
-
-                    label {
-                        class: "label",
-                        span { class: "label-text-alt", "Gunnery Officer" }
-                    }
-
-                    select {
-                        class: "{select_class}",
-                        onchange: |evt| {
-                            ship.with_mut(|s| s.shiptype = SHIPTYPES[evt.data.value.parse::<usize>().unwrap()].clone())
-                        },
-                        self::select_options { arr: stringvec(&OFFICERS) }
-                    },
-                }
-
-                div {
-                    class: "form-control w-full max-w-xs",
-
-                    label {
-                        class: "label",
-                        span { class: "label-text-alt", "Cook" }
-                    }
-
-                    select {
-                        class: "{select_class}",
-                        onchange: |evt| {
-                            ship.with_mut(|s| s.shiptype = SHIPTYPES[evt.data.value.parse::<usize>().unwrap()].clone())
-                        },
-                        self::select_options { arr: stringvec(&OFFICERS) }
-                    },
-                }
-
-                div {
-                    class: "form-control w-full max-w-xs",
-
-                    label {
-                        class: "label",
-                        span { class: "label-text-alt", "Surgeon" }
-                    }
-
-                    select {
-                        class: "{select_class}",
-                        onchange: |evt| {
-                            ship.with_mut(|s| s.shiptype = SHIPTYPES[evt.data.value.parse::<usize>().unwrap()].clone())
-                        },
-                        self::select_options { arr: stringvec(&OFFICERS) }
-                    },
-                }
-
-                div {
-                    class: "form-control w-full max-w-xs",
-
-                    label {
-                        class: "label",
-                        span { class: "label-text-alt", "Mascot" }
-                    }
-
-                    select {
-                        class: "{select_class}",
-                        onchange: |evt| {
-                            ship.with_mut(|s| s.shiptype = SHIPTYPES[evt.data.value.parse::<usize>().unwrap()].clone())
-                        },
-                        self::select_options { arr: stringvec(&OFFICERS) }
-                    },
-                }
-            }
-        },
+            self::officer{
+                position: Position::FirstOfficer,
+                ship: ship,
+            },
+            self::officer {
+                position: Position::Engineer,
+                ship: ship
+            },
+            self::officer {
+                position: Position::Gunner,
+                ship: ship
+            },
+            self::officer {
+                position: Position::Cook,
+                ship: ship
+            },
+            self::officer {
+                position: Position::Surgeon,
+                ship: ship
+            },
+            self::officer {
+                position: Position::Mascot,
+                ship: ship
+            },
+        }
     })
 }
 
+#[inline_props]
+fn officer<'a>(cx: Scope, position: Position, ship: &'a UseRef<Ship>) -> Element {
+    let set_modal = use_set(&cx, MODAL);
+
+    cx.render(rsx! {
+        div {
+            class: "w-40 pb-4",
+            label {
+                class: "label",
+                span {
+                    class: "label-text m-auto",
+                    b { "{position}" }
+                }
+            }
+            img {
+                class: "w-24 m-auto",
+                src: "images/SS_costermonger2gaz.png",
+                onclick: |_| set_modal(Some(Modal { ship: ship.clone().clone(), selected: Selected::Officer(Position::FirstOfficer) }))
+            }
+        }
+    })
+}

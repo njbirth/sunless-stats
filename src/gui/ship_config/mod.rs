@@ -1,5 +1,5 @@
-mod officers;
-mod equipment;
+pub mod officers;
+pub mod equipment;
 
 use std::fmt::Display;
 use dioxus::prelude::*;
@@ -8,7 +8,7 @@ use crate::ship::{Ship, Shiptype};
 
 #[inline_props]
 pub fn ship_config<'a>(cx: Scope, ship: &'a UseRef<Ship>) -> Element {
-    let select_class = "select select-bordered select-sm w-full max-w-xs";
+    let active_tab = use_state(&cx, || 0);
 
     cx.render(rsx! {
         div {
@@ -18,47 +18,44 @@ pub fn ship_config<'a>(cx: Scope, ship: &'a UseRef<Ship>) -> Element {
                 class: "flex flex-row justify-center",
 
                 select {
-                    class: "{select_class}",
+                    class: "select select-bordered select-sm w-full max-w-xs",
                     onchange: |evt| {
                         ship.with_mut(|s| s.shiptype = SHIPTYPES[evt.data.value.parse::<usize>().unwrap()].clone())
                     },
-                    self::select_options { arr: stringvec(&SHIPTYPES) }
+
+                    SHIPTYPES.iter().enumerate().map(|(idx, ship)| {
+                        rsx! { option { value: "{idx}", "{ship}" } }
+                    })
                 },
             }
 
             div {
-                class: "flex flex-row",
+                class: "border-2 mt-4 p-2",
 
                 div {
-                    class: "m-2",
-
-                    equipment::equipment { ship: ship },
-                },
-
-                div {
-                    class: "m-2",
-
-                    officers::officers { ship: ship },
+                    class: "tabs border-b",
+                    a {
+                        class: format_args!("tab {}", if *active_tab.current() == 0 { "tab-active" } else { "" }),
+                        onclick: |_| active_tab.set(0),
+                        "Equipment"
+                    },
+                    a {
+                        class: format_args!("tab {}", if *active_tab.current() == 1 { "tab-active" } else { "" }),
+                        onclick: |_| active_tab.set(1),
+                        "Officers"
+                    }
                 }
+
+                div {
+                    class: "m-2",
+
+                    match *active_tab.current() {
+                        0 => rsx! { equipment::equipment { ship: ship } },
+                        1 => rsx! { officers::officers { ship: ship } },
+                        _ => unreachable!()
+                    }
+                },
             }
         },
     })
-}
-
-#[inline_props]
-fn select_options(cx: Scope, arr: Vec<String>) -> Element {
-    cx.render(rsx! {
-        arr.iter().enumerate().map(|(idx, ship)| {
-            rsx!{
-                option {
-                    value: "{idx}",
-                    [format_args!("{ship}")]
-                }
-            }
-        })
-    })
-}
-
-fn stringvec(v: &Vec<impl Display>) -> Vec<String> {
-    v.iter().map(|s| s.to_string()).collect()
 }
