@@ -7,7 +7,7 @@ pub fn stats<'a>(cx: Scope, ship: &'a UseRef<Ship>) -> Element {
 
     let weight = ship.shiptype.stats.weight;
     let engine_power = ship.engine_power();
-    let quarters = ship.shiptype.stats.quarters;
+    let quarters = ship.quarters();
 
     cx.render(rsx! {
         div {

@@ -1,10 +1,10 @@
 pub mod officers;
 pub mod equipment;
+pub mod selector;
 
-use std::fmt::Display;
 use dioxus::prelude::*;
 use crate::data::*;
-use crate::ship::{Ship, Shiptype};
+use crate::ship::Ship;
 
 #[inline_props]
 pub fn ship_config<'a>(cx: Scope, ship: &'a UseRef<Ship>) -> Element {
@@ -15,22 +15,22 @@ pub fn ship_config<'a>(cx: Scope, ship: &'a UseRef<Ship>) -> Element {
             class: "flex flex-col",
 
             div {
-                class: "flex flex-row justify-center",
+                class: "border-2 mt-2 p-2",
 
-                select {
-                    class: "select select-bordered select-sm w-full max-w-xs",
-                    onchange: |evt| {
-                        ship.with_mut(|s| s.shiptype = SHIPTYPES[evt.data.value.parse::<usize>().unwrap()].clone())
+                div {
+                    class: "flex flex-row justify-center mb-8",
+
+                    select {
+                        class: "select select-bordered select-sm w-full max-w-xs",
+                        onchange: |evt| {
+                            ship.with_mut(|s| s.shiptype = SHIPTYPES[evt.data.value.parse::<usize>().unwrap()].clone())
+                        },
+
+                        SHIPTYPES.iter().enumerate().map(|(idx, ship)| {
+                            rsx! { option { value: "{idx}", "{ship}" } }
+                        })
                     },
-
-                    SHIPTYPES.iter().enumerate().map(|(idx, ship)| {
-                        rsx! { option { value: "{idx}", "{ship}" } }
-                    })
-                },
-            }
-
-            div {
-                class: "border-2 mt-4 p-2",
+                }
 
                 div {
                     class: "tabs border-b",

@@ -9,6 +9,7 @@ pub mod equipment;
 pub mod officers;
 pub mod data;
 pub mod gui;
+pub mod item;
 
 #[derive(Debug, Deserialize, Serialize, Default, Clone, PartialEq, Eq)]
 #[serde(default)]

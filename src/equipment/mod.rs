@@ -1,5 +1,8 @@
 use serde::{Deserialize, Serialize};
 
+use std::fmt;
+use std::fmt::{Display, Formatter};
+
 use crate::Skills;
 
 #[derive(Debug, Deserialize, Serialize, Default, Clone, PartialEq)]
@@ -52,13 +55,27 @@ impl EquipmentSlots {
 
         efficiency
     }
+
+    pub fn quarters(&self) -> i32 {
+        let mut quarters = 0;
+
+        if let Some(equipment) = &self.deck { quarters += equipment.quarters };
+        if let Some(equipment) = &self.forward { quarters += equipment.quarters };
+        if let Some(equipment) = &self.auxiliary { quarters += equipment.quarters };
+        if let Some(equipment) = &self.bridge { quarters += equipment.quarters };
+        if let Some(equipment) = &self.aft { quarters += equipment.quarters };
+        if let Some(equipment) = &self.engine { quarters += equipment.quarters };
+
+        quarters
+    }
 }
 
 #[derive(Debug, Deserialize, Serialize, Default, Clone, PartialEq)]
 #[serde(default)]
 pub struct Equipment {
     pub name: String,
-    pub slot: Slot,
+    pub img: String,
+    pub slot: EquipmentType,
     pub skills: Skills,
     pub damage: Option<Damage>,
     pub engine_power: i32,
@@ -66,8 +83,14 @@ pub struct Equipment {
     pub quarters: i32
 }
 
+impl Display for Equipment {
+    fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+        write!(f, "{}", self.name)
+    }
+}
+
 #[derive(Debug, Deserialize, Serialize, Clone, PartialEq)]
-pub enum Slot {
+pub enum EquipmentType {
     Deck,
     Forward,
     Auxiliary,
@@ -76,8 +99,23 @@ pub enum Slot {
     Engine
 }
 
-impl Default for Slot {
-    fn default() -> Self { Slot::Auxiliary }
+impl Display for EquipmentType {
+    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
+        let s = match self {
+            EquipmentType::Deck => "Deck",
+            EquipmentType::Forward => "Forward",
+            EquipmentType::Auxiliary => "Auxiliary",
+            EquipmentType::Bridge => "Bridge",
+            EquipmentType::Aft => "Aft",
+            EquipmentType::Engine => "Engine",
+        };
+
+        write!(f, "{}", s)
+    }
+}
+
+impl Default for EquipmentType {
+    fn default() -> Self { EquipmentType::Auxiliary }
 }
 
 #[derive(Debug, Deserialize, Serialize, Default, Clone, PartialEq)]

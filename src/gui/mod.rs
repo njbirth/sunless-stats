@@ -1,11 +1,8 @@
 pub mod stats;
 pub mod ship_config;
-pub mod modal;
 
-use std::fmt::Display;
 use dioxus::prelude::*;
-use crate::data::*;
-use crate::ship::{Ship, Shiptype};
+use crate::ship::Ship;
 
 pub fn app(cx: Scope) -> Element {
     let ship = use_ref(&cx, || Ship::default());
@@ -28,7 +25,7 @@ pub fn app(cx: Scope) -> Element {
                 stats::stats { ship: ship }
             }
 
-            modal::modal {  }
+            ship_config::selector::modal {  }
         }
     })
 }

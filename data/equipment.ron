@@ -1,164 +1,179 @@
 [
     Equipment(
         name: "Leadbeater & Stainrod 'Seaworm'",
+        img: "equipment/forward/seaworm.png",
         slot: Forward,
-        damage: Damage(
+        damage: Some(Damage(
             hull: 24,
             life: 24,
             crew: 1,
             warmup: 4,
             stagger: 4
-        ),
+        )),
     ),
     Equipment(
         name: "Leadbeater & Stainrod 'Britomart' Flensing-Cannon",
+        img: "equipment/forward/britomart.png",
         slot: Forward,
-        damage: Damage(
+        damage: Some(Damage(
             hull: 14,
             life: 22,
             crew: 2,
             warmup: 4,
             stagger: 0
-        ),
+        )),
     ),
     Equipment(
         name: "Leadbeater & Stainrod 'Winnower'",
+        img: "equipment/forward/winnower.png",
         slot: Forward,
-        damage: Damage(
+        damage: Some(Damage(
             hull: 28,
             life: 28,
             crew: 2,
             warmup: 4,
             stagger: 6
-        ),
+        )),
     ),
     Equipment(
         name: "Cotterell & Hathersage 'Majesty'",
+        img: "equipment/forward/majesty.png",
         slot: Forward,
-        damage: Damage(
+        damage: Some(Damage(
             hull: 22,
             life: 22,
             crew: 2,
             warmup: 4,
             stagger: 2
-        ),
+        )),
     ),
     Equipment(
         name: "Stampshod's 'Calvary' Prong Launcher",
+        img: "equipment/forward/calvary.png",
         slot: Forward,
-        damage: Damage(
+        damage: Some(Damage(
             hull: 16,
             life: 24,
             crew: 2,
             warmup: 4,
             stagger: 0
-        ),
+        )),
     ),
     Equipment(
         name: "Cotterell & Hathersage Pneumatic Dynamite Torpedo-Gun",
+        img: "equipment/forward/ch_torpedo_gun.png",
         slot: Forward,
-        damage: Damage(
+        damage: Some(Damage(
             hull: 24,
             life: 24,
             crew: 1,
             warmup: 4,
             stagger: 4
-        ),
+        )),
     ),
     Equipment(
         name: "Caminus Yards 'Bandersnatch'",
+        img: "equipment/forward/bandersnatch.png",
         slot: Forward,
-        damage: Damage(
+        damage: Some(Damage(
             hull: 34,
             life: 34,
             crew: 4,
             warmup: 4,
             stagger: 8
-        ),
+        )),
     ),
     Equipment(
         name: "Caminus Yards Heart-Ender",
+        img: "equipment/forward/heart-ender.png",
         slot: Forward,
-        damage: Damage(
+        damage: Some(Damage(
             hull: 20,
             life: 28,
             crew: 3,
             warmup: 4,
             stagger: 2
-        ),
+        )),
     ),
     Equipment(
         name: "Memento Mori",
+        img: "equipment/forward/mementomori.png",
         slot: Forward,
         skills: Skills(
             iron: 6,
             mirrors: 3
         ),
-        damage: Damage(
+        damage: Some(Damage(
             hull: 24,
             life: 32,
             crew: 4,
             warmup: 4,
             stagger: 2
-        ),
+        )),
     ),
     Equipment(
         name: "Icarus in Black",
+        img: "equipment/forward/icarus.png",
         slot: Forward,
-        damage: Damage(
+        damage: Some(Damage(
             hull: 50,
             life: 500,
             crew: 0,
             warmup: 5,
             stagger: 6
-        ),
+        )),
     ),
     Equipment(
         name: "Leadbeater & Stainrod Reconditioned Frigate-Surplus Deck-Gun Mark II",
+        img: "equipment/deck/mark2.png",
         slot: Deck,
-        damage: Damage(
+        damage: Some(Damage(
             hull: 8,
             life: 8,
             crew: 1,
             warmup: 4,
             stagger: 0
-        ),
+        )),
     ),
     Equipment(
         name: "Cotterell & Hathersage 'Reproach'",
+        img: "equipment/deck/reproach.png",
         slot: Deck,
-        damage: Damage(
+        damage: Some(Damage(
             hull: 12,
             life: 12,
             crew: 1,
             warmup: 4,
             stagger: 0
-        ),
+        )),
     ),
     Equipment(
         name: "Cotterell & Hathersage 'Denunciation'",
+        img: "equipment/deck/denunciation.png",
         slot: Deck,
-        damage: Damage(
+        damage: Some(Damage(
             hull: 15,
             life: 15,
             crew: 1,
             warmup: 4,
             stagger: 0
-        ),
+        )),
     ),
     Equipment(
         name: "Caminus Yards Hellthrasher",
+        img: "equipment/deck/hellthrasher.png",
         slot: Deck,
-        damage: Damage(
+        damage: Some(Damage(
             hull: 18,
             life: 18,
             crew: 2,
             warmup: 4,
             stagger: 0
-        ),
+        )),
     ),
     Equipment(
         name: "Whithern Optical",
+        img: "equipment/bridge/whithern.png",
         slot: Bridge,
         skills: Skills(
             mirrors: 1
@@ -166,6 +181,7 @@
     ),
     Equipment(
         name: "Soft Glim-Lamp",
+        img: "equipment/bridge/soft.png",
         slot: Bridge,
         skills: Skills(
             mirrors: 3,
@@ -174,6 +190,7 @@
     ),
     Equipment(
         name: "Blazing Glim-Lamp",
+        img: "equipment/bridge/blazing.png",
         slot: Bridge,
         skills: Skills(
             mirrors: 5,
@@ -182,6 +199,7 @@
     ),
     Equipment(
         name: "Montaigne Projector",
+        img: "equipment/bridge/montaigne.png",
         slot: Bridge,
         skills: Skills(
             mirrors: 10,
@@ -190,6 +208,7 @@
     ),
     Equipment(
         name: "Speculative Consonator",
+        img: "equipment/bridge/speculative.png",
         slot: Bridge,
         skills: Skills(
             mirrors: 4,
@@ -197,6 +216,7 @@
     ),
     Equipment(
         name: "Judgement Resonator",
+        img: "equipment/bridge/lamp_resonator.png",
         slot: Bridge,
         skills: Skills(
             mirrors: 6,
@@ -204,6 +224,7 @@
     ),
     Equipment(
         name: "Awakened Seal of the Red Science",
+        img: "equipment/bridge/seal.png",
         slot: Bridge,
         skills: Skills(
             mirrors: 3,
@@ -212,14 +233,17 @@
     ),
     Equipment(
         name: "Torpedo Nets",
+        img: "equipment/auxiliary/torpedonets.png",
         slot: Auxiliary
     ),
     Equipment(
         name: "Caminus Yards Pneumatic Ratsender",
+        img: "equipment/auxiliary/ratsender.png",
         slot: Auxiliary
     ),
     Equipment(
         name: "WE ARE CLAY",
+        img: "equipment/auxiliary/weareclay.png",
         slot: Auxiliary,
         quarters: -3,
         skills: Skills(
@@ -229,6 +253,7 @@
     ),
     Equipment(
         name: "Anatomical Cabinet",
+        img: "equipment/auxiliary/cabinet.png",
         slot: Auxiliary,
         skills: Skills(
             iron: 7
@@ -236,6 +261,7 @@
     ),
     Equipment(
         name: "Monstrous Almanac",
+        img: "equipment/auxiliary/almanac.png",
         slot: Auxiliary,
         skills: Skills(
             pages: 7
@@ -243,6 +269,7 @@
     ),
     Equipment(
         name: "Serene Aquarium",
+        img: "equipment/auxiliary/aquarium.png",
         slot: Auxiliary,
         skills: Skills(
             mirrors: 7
@@ -250,6 +277,7 @@
     ),
     Equipment(
         name: "Shrine to Stone",
+        img: "equipment/auxiliary/shrine_stone.png",
         slot: Auxiliary,
         skills: Skills(
             hearts: 7
@@ -257,6 +285,7 @@
     ),
     Equipment(
         name: "Whispering Trophy-Case",
+        img: "equipment/auxiliary/trophycase.png",
         slot: Auxiliary,
         skills: Skills(
             veils: 7
@@ -264,6 +293,7 @@
     ),
     Equipment(
         name: "A Banner of Coming Glory",
+        img: "equipment/auxiliary/banner_glory.png",
         slot: Auxiliary,
         skills: Skills(
             pages: 3,
@@ -275,6 +305,7 @@
     ),
     Equipment(
         name: "The Zong of the Zee",
+        img: "equipment/auxiliary/zong.png",
         slot: Auxiliary,
         skills: Skills(
             pages: 10,
@@ -286,36 +317,43 @@
     ),
     Equipment(
         name: "Elderly Steeple-Engine",
+        img: "equipment/engines/steeple_engine.png",
         slot: Engine,
         engine_power: 800
     ),
     Equipment(
         name: "Leadbeater & Stainrod 'Illyrian'",
+        img: "equipment/engines/illyrian.png",
         slot: Engine,
         engine_power: 1000
     ),
     Equipment(
         name: "Leadbeater & Stainrod 'Boadicea'",
+        img: "equipment/engines/boadicea.png",
         slot: Engine,
         engine_power: 1500
     ),
     Equipment(
         name: "Cotterell & Hathersage 'Manticore No.4'",
+        img: "equipment/engines/manticore.png",
         slot: Engine,
         engine_power: 2000
     ),
     Equipment(
         name: "Cotterell & Hathersage 'Admiralty Special'",
+        img: "equipment/engines/admiralty_special.png",
         slot: Engine,
         engine_power: 2500
     ),
     Equipment(
         name: "Caminus Yards 'Compulsion'",
+        img: "equipment/engines/engine_compulsion.png",
         slot: Engine,
         engine_power: 3500
     ),
     Equipment(
         name: "The Serpentine",
+        img: "equipment/engines/engine_serpentine.png",
         slot: Engine,
         engine_power: 1800,
         fuel_efficiency: 10,
@@ -326,6 +364,7 @@
     ),
     Equipment(
         name: "The Fulgent Impeller",
+        img: "equipment/engines/impeller.png",
         slot: Engine,
         engine_power: 5000,
         fuel_efficiency: 50,
@@ -336,39 +375,43 @@
     ),
     Equipment(
         name: "Leadbeater & Stainrod 'Scorpion'",
+        img: "equipment/aft/scorpion.png",
         slot: Aft,
-        damage: Damage(
+        damage: Some(Damage(
             hull: 22,
             life: 22,
             crew: 1,
             warmup: 6,
             stagger: 6
-        )
+        ))
     ),
     Equipment(
         name: "Cotterell & Hathersage 'Discouragement'",
+        img: "equipment/aft/discouragement.png",
         slot: Aft,
-        damage: Damage(
+        damage: Some(Damage(
             hull: 24,
             life: 24,
             crew: 1,
             warmup: 6,
             stagger: 8
-        )
+        ))
     ),
     Equipment(
         name: "Caminus Yards 'D__nation'",
+        img: "equipment/aft/d__nation.png",
         slot: Aft,
-        damage: Damage(
+        damage: Some(Damage(
             hull: 28,
             life: 28,
             crew: 2,
             warmup: 6,
             stagger: 8
-        )
+        ))
     ),
     Equipment(
         name: "Caminus Yards Avid Suppressor",
+        img: "equipment/aft/avid_suppressor.png",
         slot: Aft,
         skills: Skills(
             veils: 3
@@ -376,17 +419,20 @@
     ),
     Equipment(
         name: "Concealed Compartment",
+        img: "equipment/aft/concealed_compartment.png",
         slot: Aft
     ),
     Equipment(
         name: "Secure Compartment",
+        img: "equipment/aft/secure_compartment.png",
         slot: Aft
     ),
     Equipment(
         name: "Milebreaker",
+        img: "equipment/aft/milebreaker.png",
         slot: Aft,
         fuel_efficiency: 10,
-        skills: Skill(
+        skills: Skills(
             hearts: -10
         )
     )

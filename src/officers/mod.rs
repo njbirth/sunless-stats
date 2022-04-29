@@ -58,6 +58,7 @@ impl Officers {
 #[serde(default)]
 pub struct Officer {
     pub name: String,
+    pub img: String,
     pub position: Position,
     pub skills: crate::Skills,
     pub engine_power: i32,
