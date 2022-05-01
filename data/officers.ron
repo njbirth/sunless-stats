@@ -1,54 +1,54 @@
 [
-    Officer(
+    Item(
         name: "Bandaged Poissonnier",
         img: "officers/cook/bandagedpoissonier.png",
-        position: Cook,
+        slot: Cook,
         skills: Skills(
             hearts: 6,
             pages: 3
         )
     ),
-    Officer(
+    Item(
         name: "Bandaged Chef-Paramount",
         img: "officers/cook/bandagedpoissonier.png",
-        position: Cook,
+        slot: Cook,
         skills: Skills(
             hearts: 9,
             pages: 5
         )
     ),
-    Officer(
+    Item(
         name: "Nacreous Outcast",
         img: "officers/cook/nacreousoutcast.png",
-        position: Cook,
+        slot: Cook,
         skills: Skills(
             hearts: 4,
             pages: 2,
             mirrors: 2
         )
     ),
-    Officer(
+    Item(
         name: "Nacreous Survivor",
         img: "officers/cook/nacreousoutcast.png",
-        position: Cook,
+        slot: Cook,
         skills: Skills(
             hearts: 8,
             pages: 4,
             mirrors: 4
         )
     ),
-    Officer(
+    Item(
         name: "Shady Cook",
         img: "officers/cook/shadycook.png",
-        position: Cook,
+        slot: Cook,
         skills: Skills(
             hearts: 1,
         )
     ),
-    Officer(
+    Item(
         name: "Scrimshaw Chronicler",
         img: "officers/cook/chronicler.png",
-        position: Cook,
+        slot: Cook,
         skills: Skills(
             hearts: -1,
             iron: 3,
@@ -56,47 +56,47 @@
             mirrors: 3
         )
     ),
-    Officer(
+    Item(
         name: "Gall-Eyed Engineer",
         img: "officers/engineer/galleyedengineer.png",
-        position: Engineer,
+        slot: Engineer,
         skills: Skills(
             veils: 1,
         ),
     ),
-    Officer(
+    Item(
         name: "Genial Magician",
         img: "officers/engineer/genialmagician.png",
-        position: Engineer,
+        slot: Engineer,
         skills: Skills(
             hearts: -1,
             veils: 6,
             mirrors: 3
         ),
     ),
-    Officer(
+    Item(
         name: "Prudent Magician",
         img: "officers/engineer/genialmagician.png",
-        position: Engineer,
+        slot: Engineer,
         skills: Skills(
             veils: 6,
             mirrors: 4
         ),
     ),
-    Officer(
+    Item(
         name: "The Satisfied Magician",
         img: "officers/engineer/genialmagician.png",
-        position: Engineer,
+        slot: Engineer,
         skills: Skills(
             veils: 6,
             mirrors: 5,
             hearts: 1
         ),
     ),
-    Officer(
+    Item(
         name: "The Urbane Magician",
         img: "officers/engineer/genialmagician.png",
-        position: Engineer,
+        slot: Engineer,
         skills: Skills(
             veils: 8,
             mirrors: 6,
@@ -104,259 +104,259 @@
             pages: 3
         ),
     ),
-    Officer(
+    Item(
         name: "Maybe's Daughter",
         img: "officers/engineer/maybesdaughter.png",
-        position: Engineer,
+        slot: Engineer,
         skills: Skills(
             veils: 6,
             iron: 3
         ),
         engine_power: 100
     ),
-    Officer(
+    Item(
         name: "Maybe's Rival",
         img: "officers/engineer/maybesdaughter.png",
-        position: Engineer,
+        slot: Engineer,
         skills: Skills(
             veils: 7,
             iron: 6
         ),
         engine_power: 150
     ),
-    Officer(
+    Item(
         name: "Nobody's Daughter",
         img: "officers/engineer/maybesdaughter.png",
-        position: Engineer,
+        slot: Engineer,
         skills: Skills(
             veils: 7,
             iron: 3
         ),
         engine_power: 100
     ),
-    Officer(
+    Item(
         name: "Tireless Mechanic",
         img: "officers/engineer/tirelessmechanic.png",
-        position: Engineer,
+        slot: Engineer,
         skills: Skills(
             veils: 8
         ),
         fuel_efficiency: 5
     ),
-    Officer(
+    Item(
         name: "Carnelian Exile",
         img: "officers/firstofficer/carnelianexile.png",
-        position: FirstOfficer,
+        slot: FirstOfficer,
         skills: Skills(
             mirrors: 6,
             pages: 3
         )
     ),
-    Officer(
+    Item(
         name: "The Merciless Modiste",
         img: "officers/firstofficer/mercilessmodiste.png",
-        position: FirstOfficer,
+        slot: FirstOfficer,
         skills: Skills(
             iron: 8,
             veils: 3,
             hearts: 1
         )
     ),
-    Officer(
+    Item(
         name: "Sigil-Ridden Navigator",
         img: "officers/firstofficer/sigilriddennavigator.png",
-        position: FirstOfficer,
+        slot: FirstOfficer,
         skills: Skills(
             mirrors: 6,
             veils: 3
         )
     ),
-    Officer(
+    Item(
         name: "Sigil-Eaten Navigator",
         img: "officers/firstofficer/sigilriddennavigator.png",
-        position: FirstOfficer,
+        slot: FirstOfficer,
         skills: Skills(
             mirrors: 9,
             veils: 5
         )
     ),
-    Officer(
+    Item(
         name: "Sly Navigator",
         img: "officers/firstofficer/slynavigator.png",
-        position: FirstOfficer,
+        slot: FirstOfficer,
         skills: Skills(
             mirrors: 1
         )
     ),
-    Officer(
+    Item(
         name: "Your Father",
         img: "officers/firstofficer/yourfather.png",
-        position: FirstOfficer,
+        slot: FirstOfficer,
         skills: Skills(
             hearts: 1,
             veils: 1
         )
     ),
-    Officer(
+    Item(
         name: "Irrepressible Cannoneer",
         img: "officers/gunner/irrepressiblecannonneer.png",
-        position: Gunner,
+        slot: Gunner,
         skills: Skills(
             iron: 8
         )
     ),
-    Officer(
+    Item(
         name: "Longshanks Gunner",
         img: "officers/gunner/longshanksgunner.png",
-        position: Gunner,
+        slot: Gunner,
         skills: Skills(
             iron: 1
         )
     ),
-    Officer(
+    Item(
         name: "Presbyterate Adventuress",
         img: "officers/gunner/presbyterateadventuress.png",
-        position: Gunner,
+        slot: Gunner,
         skills: Skills(
             iron: 6,
             veils: 3
         )
     ),
-    Officer(
+    Item(
         name: "Wistful Deviless",
         img: "officers/gunner/deviless_wistful.png",
-        position: Gunner,
+        slot: Gunner,
         skills: Skills(
             iron: 1
         )
     ),
-    Officer(
+    Item(
         name: "Brisk Campaigner",
         img: "officers/surgeon/campaigner.png",
-        position: Surgeon,
+        slot: Surgeon,
         skills: Skills(
             hearts: 6,
             iron: 3,
 
         )
     ),
-    Officer(
+    Item(
         name: "Indomitable Campaigner",
         img: "officers/surgeon/campaigner.png",
-        position: Surgeon,
+        slot: Surgeon,
         skills: Skills(
             hearts: 9,
             iron: 5
         )
     ),
-    Officer(
+    Item(
         name: "Cladery Heir",
         img: "officers/surgeon/claderyheir.png",
-        position: Surgeon,
+        slot: Surgeon,
         skills: Skills(
             hearts: 6,
             iron: 6
         )
     ),
-    Officer(
+    Item(
         name: "Haunted Doctor",
         img: "officers/surgeon/haunteddoctor.png",
-        position: Surgeon,
+        slot: Surgeon,
         skills: Skills(
             hearts: 6,
             pages: 3
         )
     ),
-    Officer(
+    Item(
         name: "Determined Doctor",
         img: "officers/surgeon/haunteddoctor.png",
-        position: Surgeon,
+        slot: Surgeon,
         skills: Skills(
             hearts: 9,
             pages: 3
         )
     ),
-    Officer(
+    Item(
         name: "Disillusioned Doctor",
         img: "officers/surgeon/haunteddoctor.png",
-        position: Surgeon,
+        slot: Surgeon,
         skills: Skills(
             hearts: 6,
             pages: 6
         )
     ),
-    Officer(
+    Item(
         name: "The Lady in Lilac",
         img: "officers/surgeon/lilac.png",
-        position: Surgeon,
+        slot: Surgeon,
         skills: Skills(
             hearts: 6,
             pages: 6,
             mirrors: 6
         )
     ),
-    Officer(
+    Item(
         name: "Plausible Surgeon",
         img: "officers/surgeon/plausiblesurgeon.png",
-        position: Surgeon,
+        slot: Surgeon,
         skills: Skills(
             hearts: 1,
             pages: 1
         )
     ),
-    Officer(
+    Item(
         name: "The Scarred Sister",
         img: "officers/surgeon/scarredsister.png",
-        position: Surgeon,
+        slot: Surgeon,
         skills: Skills(
             hearts: 5
         )
     ),
-    Officer(
+    Item(
         name: "Albino Tinkerer",
         img: "officers/mascot/albinotinkerer.png",
-        position: Mascot,
+        slot: Mascot,
         skills: Skills(
             veils: 2
         )
     ),
-    Officer(
+    Item(
         name: "Comatose Ferret",
         img: "officers/mascot/ferret.png",
-        position: Mascot,
+        slot: Mascot,
         skills: Skills(
             hearts: 1
         )
     ),
-    Officer(
+    Item(
         name: "Elegiac Cockatoo",
         img: "officers/mascot/elegaiccockatoo.png",
-        position: Mascot,
+        slot: Mascot,
         skills: Skills(
             mirrors: 2
         )
     ),
-    Officer(
+    Item(
         name: "Eyeless Skull",
         img: "officers/mascot/skulleyeless.png",
-        position: Mascot,
+        slot: Mascot,
         skills: Skills(
             mirrors: -2,
             veils: 4
         )
     ),
-    Officer(
+    Item(
         name: "Guinea Page",
         img: "officers/mascot/guineapig.png",
-        position: Mascot,
+        slot: Mascot,
         skills: Skills(
             pages: 2
         )
     ),
-    Officer(
+    Item(
         name: "Keeper-Moth",
         img: "officers/mascot/keepermoth.png",
-        position: Mascot,
+        slot: Mascot,
         skills: Skills(
             hearts: -2,
             mirrors: 3,
@@ -364,51 +364,51 @@
             pages: 3
         )
     ),
-    Officer(
+    Item(
         name: "Monkey Foundling",
         img: "officers/mascot/monkeyfoundling.png",
-        position: Mascot,
+        slot: Mascot,
         skills: Skills(
             hearts: 5
         )
     ),
-    Officer(
+    Item(
         name: "Parabolan Kitten",
         img: "officers/mascot/pantherkitten.png",
-        position: Mascot,
+        slot: Mascot,
         skills: Skills(
             hearts: 2
         )
     ),
-    Officer(
+    Item(
         name: "Parabolan Panther",
         img: "officers/mascot/parabolanpanther.png",
-        position: Mascot,
+        slot: Mascot,
         skills: Skills(
             hearts: 3,
             mirrors: 2
         )
     ),
-    Officer(
+    Item(
         name: "Vigilant Idol",
         img: "officers/mascot/vigilantidol.png",
-        position: Mascot,
+        slot: Mascot,
         skills: Skills(
             mirrors: 4
         )
     ),
-    Officer(
+    Item(
         name: "Wretched Mog",
         img: "officers/mascot/wretchedmog.png",
-        position: Mascot,
+        slot: Mascot,
         skills: Skills(
             iron: 2
         )
     ),
-    Officer(
+    Item(
         name: "Blemmigan Gallivanter",
         img: "officers/mascot/blemmigangallivanter.png",
-        position: Mascot,
+        slot: Mascot,
         skills: Skills(
             mirrors: 3,
             pages: 2

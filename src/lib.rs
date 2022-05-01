@@ -1,12 +1,9 @@
 #[macro_use] extern crate lazy_static;
 
 use serde::{Deserialize, Serialize};
-
 use std::ops::Add;
 
 pub mod ship;
-pub mod equipment;
-pub mod officers;
 pub mod data;
 pub mod gui;
 pub mod item;

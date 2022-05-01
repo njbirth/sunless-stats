@@ -1,5 +1,5 @@
 [
-    Equipment(
+    Item(
         name: "Leadbeater & Stainrod 'Seaworm'",
         img: "equipment/forward/seaworm.png",
         slot: Forward,
@@ -11,7 +11,7 @@
             stagger: 4
         )),
     ),
-    Equipment(
+    Item(
         name: "Leadbeater & Stainrod 'Britomart' Flensing-Cannon",
         img: "equipment/forward/britomart.png",
         slot: Forward,
@@ -23,7 +23,7 @@
             stagger: 0
         )),
     ),
-    Equipment(
+    Item(
         name: "Leadbeater & Stainrod 'Winnower'",
         img: "equipment/forward/winnower.png",
         slot: Forward,
@@ -35,7 +35,7 @@
             stagger: 6
         )),
     ),
-    Equipment(
+    Item(
         name: "Cotterell & Hathersage 'Majesty'",
         img: "equipment/forward/majesty.png",
         slot: Forward,
@@ -47,7 +47,7 @@
             stagger: 2
         )),
     ),
-    Equipment(
+    Item(
         name: "Stampshod's 'Calvary' Prong Launcher",
         img: "equipment/forward/calvary.png",
         slot: Forward,
@@ -59,7 +59,7 @@
             stagger: 0
         )),
     ),
-    Equipment(
+    Item(
         name: "Cotterell & Hathersage Pneumatic Dynamite Torpedo-Gun",
         img: "equipment/forward/ch_torpedo_gun.png",
         slot: Forward,
@@ -71,7 +71,7 @@
             stagger: 4
         )),
     ),
-    Equipment(
+    Item(
         name: "Caminus Yards 'Bandersnatch'",
         img: "equipment/forward/bandersnatch.png",
         slot: Forward,
@@ -83,7 +83,7 @@
             stagger: 8
         )),
     ),
-    Equipment(
+    Item(
         name: "Caminus Yards Heart-Ender",
         img: "equipment/forward/heart-ender.png",
         slot: Forward,
@@ -95,7 +95,7 @@
             stagger: 2
         )),
     ),
-    Equipment(
+    Item(
         name: "Memento Mori",
         img: "equipment/forward/mementomori.png",
         slot: Forward,
@@ -111,7 +111,7 @@
             stagger: 2
         )),
     ),
-    Equipment(
+    Item(
         name: "Icarus in Black",
         img: "equipment/forward/icarus.png",
         slot: Forward,
@@ -123,7 +123,7 @@
             stagger: 6
         )),
     ),
-    Equipment(
+    Item(
         name: "Leadbeater & Stainrod Reconditioned Frigate-Surplus Deck-Gun Mark II",
         img: "equipment/deck/mark2.png",
         slot: Deck,
@@ -135,7 +135,7 @@
             stagger: 0
         )),
     ),
-    Equipment(
+    Item(
         name: "Cotterell & Hathersage 'Reproach'",
         img: "equipment/deck/reproach.png",
         slot: Deck,
@@ -147,7 +147,7 @@
             stagger: 0
         )),
     ),
-    Equipment(
+    Item(
         name: "Cotterell & Hathersage 'Denunciation'",
         img: "equipment/deck/denunciation.png",
         slot: Deck,
@@ -159,7 +159,7 @@
             stagger: 0
         )),
     ),
-    Equipment(
+    Item(
         name: "Caminus Yards Hellthrasher",
         img: "equipment/deck/hellthrasher.png",
         slot: Deck,
@@ -171,7 +171,7 @@
             stagger: 0
         )),
     ),
-    Equipment(
+    Item(
         name: "Whithern Optical",
         img: "equipment/bridge/whithern.png",
         slot: Bridge,
@@ -179,7 +179,7 @@
             mirrors: 1
         )
     ),
-    Equipment(
+    Item(
         name: "Soft Glim-Lamp",
         img: "equipment/bridge/soft.png",
         slot: Bridge,
@@ -188,7 +188,7 @@
             veils: -1
         )
     ),
-    Equipment(
+    Item(
         name: "Blazing Glim-Lamp",
         img: "equipment/bridge/blazing.png",
         slot: Bridge,
@@ -197,7 +197,7 @@
             veils: -3
         )
     ),
-    Equipment(
+    Item(
         name: "Montaigne Projector",
         img: "equipment/bridge/montaigne.png",
         slot: Bridge,
@@ -206,7 +206,7 @@
             veils: -10
         )
     ),
-    Equipment(
+    Item(
         name: "Speculative Consonator",
         img: "equipment/bridge/speculative.png",
         slot: Bridge,
@@ -214,7 +214,7 @@
             mirrors: 4,
         )
     ),
-    Equipment(
+    Item(
         name: "Judgement Resonator",
         img: "equipment/bridge/lamp_resonator.png",
         slot: Bridge,
@@ -222,7 +222,7 @@
             mirrors: 6,
         )
     ),
-    Equipment(
+    Item(
         name: "Awakened Seal of the Red Science",
         img: "equipment/bridge/seal.png",
         slot: Bridge,
@@ -231,17 +231,17 @@
             iron: 3
         )
     ),
-    Equipment(
+    Item(
         name: "Torpedo Nets",
         img: "equipment/auxiliary/torpedonets.png",
         slot: Auxiliary
     ),
-    Equipment(
+    Item(
         name: "Caminus Yards Pneumatic Ratsender",
         img: "equipment/auxiliary/ratsender.png",
         slot: Auxiliary
     ),
-    Equipment(
+    Item(
         name: "WE ARE CLAY",
         img: "equipment/auxiliary/weareclay.png",
         slot: Auxiliary,
@@ -251,7 +251,7 @@
         ),
         engine_power: 250
     ),
-    Equipment(
+    Item(
         name: "Anatomical Cabinet",
         img: "equipment/auxiliary/cabinet.png",
         slot: Auxiliary,
@@ -259,7 +259,7 @@
             iron: 7
         )
     ),
-    Equipment(
+    Item(
         name: "Monstrous Almanac",
         img: "equipment/auxiliary/almanac.png",
         slot: Auxiliary,
@@ -267,7 +267,7 @@
             pages: 7
         )
     ),
-    Equipment(
+    Item(
         name: "Serene Aquarium",
         img: "equipment/auxiliary/aquarium.png",
         slot: Auxiliary,
@@ -275,7 +275,7 @@
             mirrors: 7
         )
     ),
-    Equipment(
+    Item(
         name: "Shrine to Stone",
         img: "equipment/auxiliary/shrine_stone.png",
         slot: Auxiliary,
@@ -283,7 +283,7 @@
             hearts: 7
         )
     ),
-    Equipment(
+    Item(
         name: "Whispering Trophy-Case",
         img: "equipment/auxiliary/trophycase.png",
         slot: Auxiliary,
@@ -291,7 +291,7 @@
             veils: 7
         )
     ),
-    Equipment(
+    Item(
         name: "A Banner of Coming Glory",
         img: "equipment/auxiliary/banner_glory.png",
         slot: Auxiliary,
@@ -303,7 +303,7 @@
             hearts: 10
         )
     ),
-    Equipment(
+    Item(
         name: "The Zong of the Zee",
         img: "equipment/auxiliary/zong.png",
         slot: Auxiliary,
@@ -315,43 +315,43 @@
             hearts: 10
         )
     ),
-    Equipment(
+    Item(
         name: "Elderly Steeple-Engine",
         img: "equipment/engines/steeple_engine.png",
         slot: Engine,
         engine_power: 800
     ),
-    Equipment(
+    Item(
         name: "Leadbeater & Stainrod 'Illyrian'",
         img: "equipment/engines/illyrian.png",
         slot: Engine,
         engine_power: 1000
     ),
-    Equipment(
+    Item(
         name: "Leadbeater & Stainrod 'Boadicea'",
         img: "equipment/engines/boadicea.png",
         slot: Engine,
         engine_power: 1500
     ),
-    Equipment(
+    Item(
         name: "Cotterell & Hathersage 'Manticore No.4'",
         img: "equipment/engines/manticore.png",
         slot: Engine,
         engine_power: 2000
     ),
-    Equipment(
+    Item(
         name: "Cotterell & Hathersage 'Admiralty Special'",
         img: "equipment/engines/admiralty_special.png",
         slot: Engine,
         engine_power: 2500
     ),
-    Equipment(
+    Item(
         name: "Caminus Yards 'Compulsion'",
         img: "equipment/engines/engine_compulsion.png",
         slot: Engine,
         engine_power: 3500
     ),
-    Equipment(
+    Item(
         name: "The Serpentine",
         img: "equipment/engines/engine_serpentine.png",
         slot: Engine,
@@ -362,7 +362,7 @@
             veils: 5
         )
     ),
-    Equipment(
+    Item(
         name: "The Fulgent Impeller",
         img: "equipment/engines/impeller.png",
         slot: Engine,
@@ -373,7 +373,7 @@
             mirrors: 5
         )
     ),
-    Equipment(
+    Item(
         name: "Leadbeater & Stainrod 'Scorpion'",
         img: "equipment/aft/scorpion.png",
         slot: Aft,
@@ -385,7 +385,7 @@
             stagger: 6
         ))
     ),
-    Equipment(
+    Item(
         name: "Cotterell & Hathersage 'Discouragement'",
         img: "equipment/aft/discouragement.png",
         slot: Aft,
@@ -397,7 +397,7 @@
             stagger: 8
         ))
     ),
-    Equipment(
+    Item(
         name: "Caminus Yards 'D__nation'",
         img: "equipment/aft/d__nation.png",
         slot: Aft,
@@ -409,7 +409,7 @@
             stagger: 8
         ))
     ),
-    Equipment(
+    Item(
         name: "Caminus Yards Avid Suppressor",
         img: "equipment/aft/avid_suppressor.png",
         slot: Aft,
@@ -417,17 +417,17 @@
             veils: 3
         )
     ),
-    Equipment(
+    Item(
         name: "Concealed Compartment",
         img: "equipment/aft/concealed_compartment.png",
         slot: Aft
     ),
-    Equipment(
+    Item(
         name: "Secure Compartment",
         img: "equipment/aft/secure_compartment.png",
         slot: Aft
     ),
-    Equipment(
+    Item(
         name: "Milebreaker",
         img: "equipment/aft/milebreaker.png",
         slot: Aft,

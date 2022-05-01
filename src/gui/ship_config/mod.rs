@@ -1,10 +1,9 @@
-pub mod officers;
-pub mod equipment;
 pub mod selector;
 
 use dioxus::prelude::*;
 use crate::data::*;
 use crate::ship::Ship;
+use crate::item::Slot;
 
 #[inline_props]
 pub fn ship_config<'a>(cx: Scope, ship: &'a UseRef<Ship>) -> Element {
@@ -50,8 +49,24 @@ pub fn ship_config<'a>(cx: Scope, ship: &'a UseRef<Ship>) -> Element {
                     class: "m-2",
 
                     match *active_tab.current() {
-                        0 => rsx! { equipment::equipment { ship: ship } },
-                        1 => rsx! { officers::officers { ship: ship } },
+                        0 => rsx! {
+                            selector::selector_set {
+                                ship: ship,
+                                slots: vec![
+                                    Slot::Forward, Slot::Deck, Slot::Aft,
+                                    Slot::Bridge, Slot::Auxiliary, Slot::Engine
+                                ]
+                            }
+                        },
+                        1 => rsx! {
+                            selector::selector_set {
+                                ship: ship,
+                                slots: vec![
+                                    Slot::FirstOfficer, Slot::Engineer, Slot::Gunner,
+                                    Slot::Cook, Slot::Surgeon, Slot::Mascot
+                                ]
+                            }
+                        },
                         _ => unreachable!()
                     }
                 },

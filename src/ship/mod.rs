@@ -1,106 +1,41 @@
-use crate::equipment::{Equipment, EquipmentSlots, EquipmentType};
-use crate::officers::{Officer, Officers, Position};
 use crate::Skills;
 use crate::data::*;
+use crate::item::{Item, ItemSet, Slot};
 
 mod shiptype;
 pub use shiptype::Shiptype;
 
 mod statistics;
 pub use statistics::Statistics;
-use crate::item::{Item, Slot};
 
 #[derive(Clone, PartialEq)]
 // TODO: Implement Default properly
 pub struct Ship {
     pub shiptype: Shiptype,
     pub captain_skills: Skills,
-    pub equipment: EquipmentSlots,
-    pub officers: Officers,
+    pub items: ItemSet,
     pub crew: i32,
 }
 
 impl Ship {
-    pub fn item(&self, slot: &Slot) -> Item {
-        match slot {
-            Slot::Officer(p) => if let Some(officer) = self.officer(p) {
-                Item::Officer(officer)
-            } else { Item::None },
-            Slot::Equipment(t) => if let Some(equipment) = self.equipment(t) {
-                Item::Equipment(equipment)
-            } else { Item::None }
-        }
+    pub fn item(&self, slot: &Slot) -> Option<Item> {
+        self.items.item(slot)
     }
 
-    pub fn set_item(&mut self, slot: &Slot, item: Item) {
-        match slot {
-            Slot::Officer(p) => if let Item::Officer(officer) = item {
-                self.set_officer(p, Some(officer));
-            } else { self.set_officer(p, None); },
-            Slot::Equipment(t) => if let Item::Equipment(equipment) = item {
-                self.set_equipment(t, Some(equipment));
-            } else { self.set_equipment(t, None); }
-        };
-    }
-
-    pub fn officer(&self, p: &Position) -> Option<Officer> {
-        match p {
-            Position::Cook => self.officers.cook.clone(),
-            Position::Engineer => self.officers.engineer.clone(),
-            Position::FirstOfficer => self.officers.first_officer.clone(),
-            Position::Gunner => self.officers.gunner.clone(),
-            Position::Surgeon => self.officers.surgeon.clone(),
-            Position::Mascot => self.officers.mascot.clone(),
-        }
-    }
-
-    pub fn set_officer(&mut self, p: &Position, officer: Option<Officer>) {
-        match p {
-            Position::Cook => self.officers.cook = officer,
-            Position::Engineer => self.officers.engineer = officer,
-            Position::FirstOfficer => self.officers.first_officer = officer,
-            Position::Gunner => self.officers.gunner = officer,
-            Position::Surgeon => self.officers.surgeon = officer,
-            Position::Mascot => self.officers.mascot = officer,
-        };
-    }
-
-    pub fn equipment(&self, t: &EquipmentType) -> Option<Equipment> {
-        match t {
-            EquipmentType::Deck => self.equipment.deck.clone(),
-            EquipmentType::Forward => self.equipment.forward.clone(),
-            EquipmentType::Auxiliary => self.equipment.auxiliary.clone(),
-            EquipmentType::Bridge => self.equipment.bridge.clone(),
-            EquipmentType::Aft => self.equipment.aft.clone(),
-            EquipmentType::Engine => self.equipment.engine.clone()
-        }
-    }
-
-    pub fn set_equipment(&mut self, t: &EquipmentType, equipment: Option<Equipment>) {
-        match t {
-            EquipmentType::Deck => self.equipment.deck = equipment,
-            EquipmentType::Forward => self.equipment.forward = equipment,
-            EquipmentType::Auxiliary => self.equipment.auxiliary = equipment,
-            EquipmentType::Bridge => self.equipment.bridge = equipment,
-            EquipmentType::Aft => self.equipment.aft = equipment,
-            EquipmentType::Engine => self.equipment.engine = equipment
-        };
+    pub fn set_item(&mut self, slot: &Slot, item: Option<Item>) {
+        self.items.set_item(slot, item);
     }
 
     pub fn engine_power(&self) -> i32 {
-        self.shiptype.stats.engine_power
-            + self.equipment.engine_power()
-            + self.officers.engine_power()
+        self.shiptype.stats.engine_power + self.items.engine_power()
     }
 
     pub fn fuel_efficiency(&self) -> i32 {
-        self.equipment.fuel_efficiency()
-            + self.officers.fuel_efficiency()
+        self.items.fuel_efficiency()
     }
 
     pub fn quarters(&self) -> i32 {
-        self.shiptype.stats.quarters
-            + self.equipment.quarters()
+        self.shiptype.stats.quarters + self.items.quarters()
     }
 
     // Fuel consumption in percent/second
@@ -126,8 +61,7 @@ impl Default for Ship {
                 pages: 25,
                 hearts: 25
             },
-            equipment: EquipmentSlots::default(),
-            officers: Officers::default(),
+            items: ItemSet::default(),
             crew: SHIPTYPES[1].stats.quarters
         }
     }

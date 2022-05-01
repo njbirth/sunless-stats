@@ -10,17 +10,28 @@ pub struct Modal {
 }
 
 #[inline_props]
+pub fn selector_set<'a>(cx: Scope, ship: &'a UseRef<Ship>, slots: Vec<Slot>) -> Element {
+    cx.render(rsx! {
+        div {
+            class: "grid grid-cols-3 justify-items-center",
+
+            slots.iter().map(|slot| { rsx! {
+                self::selector {
+                    slot: slot.clone(),
+                    ship: ship
+                }
+            }})
+        }
+    })
+}
+
+#[inline_props]
 pub fn selector<'a>(cx: Scope, slot: Slot, ship: &'a UseRef<Ship>) -> Element {
     let set_modal = use_set(&cx, MODAL);
 
-    let img = match &slot {
-        Slot::Equipment(t) => {
-            if let Some(equipment) = ship.with(|s| s.equipment(&t)) { equipment.img } else { "none.png".to_string() }
-        },
-        Slot::Officer(p) => {
-            if let Some(officer) = ship.with(|s| s.officer(&p)) { officer.img } else { "none.png".to_string() }
-        }
-    };
+    let img = if let Some(item) = ship.with(|s| s.item(&slot)) {
+        item.img
+    } else { "none.png".to_string() };
 
     cx.render(rsx! {
         div {
@@ -53,7 +64,7 @@ pub fn modal(cx: Scope) -> Element {
     let slot = &modal.selected;
 
     let elements = crate::data::items(slot);
-    let current = use_ref(&cx, || ship.with(|s| s.item(slot)));
+    let current = ship.with(|s| s.item(slot));
 
     cx.render(rsx! {
         div {
@@ -66,18 +77,18 @@ pub fn modal(cx: Scope) -> Element {
                         li {
                             onclick: |_| {
                                 set_modal(None);
-                                ship.with_mut(|s| s.set_item(slot, Item::None));
+                                ship.with_mut(|s| s.set_item(slot, None));
                             },
 
                             button {
-                                font_weight: format_args!("{}", if current.with(|c| c == &Item::None) { "bold" } else { "normal" }),
+                                font_weight: format_args!("{}", if current == Option::<Item>::None { "bold" } else { "normal" }),
 
                                 "None"
                             }
                         },
 
                         elements.iter().map(|elem| {
-                            let is_current = current.with(|c| c == elem);
+                            let is_current = current.as_ref() == Some(elem);
                             // I have no idea why this is working while all the other stuff I tried did not.
                             let elem_clone = elem.clone();
 
@@ -85,7 +96,7 @@ pub fn modal(cx: Scope) -> Element {
                                 li {
                                     onclick: move |_| {
                                         set_modal(None);
-                                        ship.write().set_item(slot, elem_clone.clone());
+                                        ship.write().set_item(slot, Some(elem_clone.clone()));
                                     },
                                     button {
                                         font_weight: format_args!("{}", if is_current { "bold" } else { "normal" }),
