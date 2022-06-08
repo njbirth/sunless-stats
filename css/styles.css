@@ -1,3 +1,16 @@
 .select:focus {
     outline: 0;
 }
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body, .table, .table td, .select, .modal-box {
+    background-color: #f5e9dd;
+}
+
+.table td {
+    border-bottom-width: 0;
+}
