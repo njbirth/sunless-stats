@@ -29,9 +29,12 @@ pub fn selector_set<'a>(cx: Scope, ship: &'a UseRef<Ship>, slots: Vec<Slot>) -> 
 pub fn selector<'a>(cx: Scope, slot: Slot, ship: &'a UseRef<Ship>) -> Element {
     let set_modal = use_set(&cx, MODAL);
 
-    let img = if let Some(item) = ship.with(|s| s.item(&slot)) {
-        item.img
-    } else { "none.png".to_string() };
+    let locked = ship.with(|s| s.shiptype.locked_slots.contains(&slot));
+
+    let img = match ship.with(|s| s.item(&slot)) {
+        Some(item) => item.img,
+        None => if locked { "locked.png".to_string() } else { "none.png".to_string() }
+    };
 
     cx.render(rsx! {
         div {
@@ -47,7 +50,14 @@ pub fn selector<'a>(cx: Scope, slot: Slot, ship: &'a UseRef<Ship>) -> Element {
                 class: "w-24 m-auto",
                 border: "3px solid #000",
                 src: format_args!("data/img/{}", img),
-                onclick: |_| set_modal(Some(Modal { ship: ship.clone().clone(), selected: slot.clone() }))
+                onclick: move |_| {
+                    if !locked {
+                        set_modal(Some(Modal {
+                            ship: ship.clone().clone(),
+                            selected: slot.clone()
+                        }))
+                    }
+                }
             }
         }
     })

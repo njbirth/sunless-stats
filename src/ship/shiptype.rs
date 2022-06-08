@@ -1,12 +1,15 @@
 use std::fmt::{self, Display, Formatter};
 use serde::{Deserialize, Serialize};
+use crate::item::Slot;
 
 use super::Statistics;
 
 #[derive(Debug, Deserialize, Serialize, Default, Clone)]
+#[serde(default)]
 pub struct Shiptype {
     pub name: String,
-    pub stats: Statistics
+    pub stats: Statistics,
+    pub locked_slots: Vec<Slot>
 }
 
 impl Display for Shiptype {

@@ -22,7 +22,15 @@ pub fn ship_config<'a>(cx: Scope, ship: &'a UseRef<Ship>) -> Element {
                     select {
                         class: "select select-bordered select-sm w-full max-w-xs",
                         onchange: |evt| {
-                            ship.with_mut(|s| s.shiptype = SHIPTYPES[evt.data.value.parse::<usize>().unwrap()].clone())
+                            ship.with_mut(|s| {
+                                s.shiptype = SHIPTYPES[evt.data.value.parse::<usize>().unwrap()].clone();
+                                if s.shiptype.locked_slots.contains(&Slot::Forward) {
+                                    s.items.set_item(&Slot::Forward, None);
+                                }
+                                if s.shiptype.locked_slots.contains(&Slot::Aft) {
+                                    s.items.set_item(&Slot::Aft, None);
+                                }
+                            })
                         },
 
                         SHIPTYPES.iter().enumerate().map(|(idx, ship)| {

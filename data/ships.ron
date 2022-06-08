@@ -10,7 +10,8 @@
                 iron: -20,
                 veils: 2,
             )
-        )
+        ),
+        locked_slots: [Forward, Aft]
     ),
     Shiptype(
         name: "Ligeia-class Steamer",
@@ -19,7 +20,8 @@
             hold: 40,
             quarters: 10,
             hull: 75
-        )
+        ),
+        locked_slots: [Forward, Aft]
     ),
     Shiptype(
         name: "Lampad-class Cutter",
@@ -33,7 +35,8 @@
                 mirrors: 5,
                 iron: -10
             )
-        )
+        ),
+        locked_slots: [Aft]
     ),
     Shiptype(
         name: "Phorcyd-class Corvette",
@@ -45,7 +48,8 @@
             skills: Skills(
                 iron: 5
             )
-        )
+        ),
+        locked_slots: [Aft]
     ),
     Shiptype(
         name: "Caligo-class Merchant Cruiser",
@@ -58,7 +62,8 @@
                 veils: -5,
                 hearts: 5
             )
-        )
+        ),
+        locked_slots: [Forward]
     ),
     Shiptype(
         name: "Maenad-class Frigate",
@@ -101,7 +106,8 @@
                 pages: 10,
                 mirrors: 10
             )
-        )
+        ),
+        locked_slots: [Forward, Aft]
     ),
     Shiptype(
         name: "Cladery Heart",
@@ -118,6 +124,7 @@
                 pages: 10,
                 hearts: 10
             )
-        )
+        ),
+        locked_slots: [Forward]
     ),
 ]
