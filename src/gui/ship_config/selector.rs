@@ -64,15 +64,28 @@ pub fn modal(cx: Scope) -> Element {
     let slot = &modal.selected;
 
     let elements = crate::data::items(slot);
+
+    let selected = use_ref(&cx, || ship.with(|s| s.item(slot)));
+    if selected.read().is_none() {
+        selected.set(ship.with(|s| s.item(slot)));
+    }
     let current = ship.with(|s| s.item(slot));
 
     cx.render(rsx! {
         div {
             class: "modal modal-open",
+            onclick: move |_| {
+                set_modal(None);
+                selected.set(None);
+            },
             div {
-                class:"modal-box",
+                class: "modal-box flex flex-row w-11/12 max-w-5xl h-3/4",
+                max_width: "80%",
+                onclick: |evt| { evt.cancel_bubble(); },
 
                 div {
+                    class: "w-1/2",
+
                     ul {
                         li {
                             onclick: |_| {
@@ -89,6 +102,7 @@ pub fn modal(cx: Scope) -> Element {
 
                         elements.iter().map(|elem| {
                             let is_current = current.as_ref() == Some(elem);
+                            let is_selected = selected.read().as_ref() == Some(elem);
                             // I have no idea why this is working while all the other stuff I tried did not.
                             let elem_clone = elem.clone();
 
@@ -97,9 +111,14 @@ pub fn modal(cx: Scope) -> Element {
                                     onclick: move |_| {
                                         set_modal(None);
                                         ship.write().set_item(slot, Some(elem_clone.clone()));
+                                        selected.set(None);
+                                    },
+                                    onmouseover: |_| {
+                                        selected.set(Some(elem_clone.clone()));
                                     },
                                     button {
                                         font_weight: format_args!("{}", if is_current { "bold" } else { "normal" }),
+                                        font_style: format_args!("{}", if is_selected { "italic" } else { "normal" }),
 
                                         "{elem}"
                                     }
@@ -107,6 +126,38 @@ pub fn modal(cx: Scope) -> Element {
                             }
                         })
                     }
+                },
+                self::info_box { item: selected }
+            }
+        }
+    })
+}
+
+#[inline_props]
+pub fn info_box<'a>(cx: Scope, item: &'a UseRef<Option<Item>>) -> Element {
+    let item = item.read();
+    if item.is_none() { return None; }
+    let item = item.as_ref().unwrap();
+
+    cx.render(rsx! {
+        div {
+            width: "250px",
+            height: "500px",
+            class: "border-l-2 h-full p-4 flex flex-col",
+
+            h3 { [format_args!("{}", item)] },
+            img {
+                class: "w-24 mx-auto my-4",
+                border: "3px solid #000",
+                src: format_args!("data/img/{}", item.img),
+            }
+            div {
+                table {
+                    tr { td { "Iron: " } td { [format_args!("{}", item.skills.iron)] } }
+                    tr { td { "Mirrors: " } td { [format_args!("{}", item.skills.mirrors)] } }
+                    tr { td { "Veils: " } td { [format_args!("{}", item.skills.veils)] } }
+                    tr { td { "Pages: " } td { [format_args!("{}", item.skills.pages)] } }
+                    tr { td { "Hearts: " } td { [format_args!("{}", item.skills.hearts)] } }
                 }
             }
         }

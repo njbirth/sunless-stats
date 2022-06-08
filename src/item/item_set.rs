@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 use super::{Item, Slot};
 use crate::Skills;
 
-#[derive(Debug, Serialize, Deserialize, Default, Clone, PartialEq)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 #[serde(default)]
 pub struct ItemSet {
     pub deck: Option<Item>,
@@ -17,6 +17,25 @@ pub struct ItemSet {
     pub gunner: Option<Item>,
     pub surgeon: Option<Item>,
     pub mascot: Option<Item>
+}
+
+impl Default for ItemSet {
+    fn default() -> Self {
+        ItemSet {
+            deck: None,
+            forward: None,
+            auxiliary: None,
+            bridge: None,
+            aft: None,
+            engine: Some(crate::data::items(&Slot::Engine)[0].clone()),
+            cook: None,
+            engineer: None,
+            first_officer: None,
+            gunner: None,
+            surgeon: None,
+            mascot: None
+        }
+    }
 }
 
 impl ItemSet {
