@@ -6,7 +6,7 @@ pub static MODAL: Atom<Option<Modal>> = |_| None;
 
 pub struct Modal {
     pub ship: UseRef<Ship>,
-    pub selected: Slot
+    pub slot: Slot
 }
 
 #[inline_props]
@@ -54,7 +54,7 @@ pub fn selector<'a>(cx: Scope, slot: Slot, ship: &'a UseRef<Ship>) -> Element {
                     if !locked {
                         set_modal(Some(Modal {
                             ship: ship.clone().clone(),
-                            selected: slot.clone()
+                            slot: slot.clone()
                         }))
                     }
                 }
@@ -64,21 +64,16 @@ pub fn selector<'a>(cx: Scope, slot: Slot, ship: &'a UseRef<Ship>) -> Element {
 }
 
 pub fn modal(cx: Scope) -> Element {
-    let modal = use_read(&cx, MODAL);
+    // The modal is only rendered if there is one. Therefore we can safely unwrap this.
+    let modal = use_read(&cx, MODAL).as_ref().unwrap();
     let set_modal = use_set(&cx, MODAL);
 
-    if modal.is_none() { return None; }
-    let modal = modal.as_ref().unwrap();
-
     let ship = &modal.ship;
-    let slot = &modal.selected;
+    let slot = &modal.slot;
 
     let elements = crate::data::items(slot);
 
     let selected = use_ref(&cx, || ship.with(|s| s.item(slot)));
-    if selected.read().is_none() {
-        selected.set(ship.with(|s| s.item(slot)));
-    }
     let current = ship.with(|s| s.item(slot));
 
     cx.render(rsx! {
@@ -89,12 +84,18 @@ pub fn modal(cx: Scope) -> Element {
                 selected.set(None);
             },
             div {
-                class: "modal-box flex flex-row w-11/12 max-w-5xl h-3/4",
-                max_width: "80%",
+                class: "modal-box flex flex-row w-11/12 max-w-5xl h-2/3",
+                max_width: "60%",
                 onclick: |evt| { evt.cancel_bubble(); },
 
                 div {
-                    class: "w-1/2",
+                    class: "border-r-2 h-full w-2/3",
+
+                    h3 {
+                        class: "font-medium leading-tight text-3xl mt-0 mb-4",
+                        style: "text-align: center",
+                        [format_args!("{}", slot)]
+                    }
 
                     ul {
                         li {
@@ -105,6 +106,8 @@ pub fn modal(cx: Scope) -> Element {
 
                             button {
                                 font_weight: format_args!("{}", if current == Option::<Item>::None { "bold" } else { "normal" }),
+                                font_style: format_args!("{}", if selected.with(|s| s.is_none()) { "italic" } else { "normal" }),
+                                onmouseover: |_| { selected.set(None); },
 
                                 "None"
                             }
@@ -121,7 +124,6 @@ pub fn modal(cx: Scope) -> Element {
                                     onclick: move |_| {
                                         set_modal(None);
                                         ship.write().set_item(slot, Some(elem_clone.clone()));
-                                        selected.set(None);
                                     },
                                     onmouseover: |_| {
                                         selected.set(Some(elem_clone.clone()));
@@ -146,30 +148,46 @@ pub fn modal(cx: Scope) -> Element {
 #[inline_props]
 pub fn info_box<'a>(cx: Scope, item: &'a UseRef<Option<Item>>) -> Element {
     let item = item.read();
-    if item.is_none() { return None; }
-    let item = item.as_ref().unwrap();
+    //if item.is_none() { return None; }
+    //let item = item.as_ref().unwrap();
+
+    let (title, img) = match item.as_ref() {
+        Some(i) => (i.name.clone(), i.img.clone()),
+        None => ("None".to_string(), "none.png".to_string())
+    };
 
     cx.render(rsx! {
         div {
-            width: "250px",
-            height: "500px",
-            class: "border-l-2 h-full p-4 flex flex-col",
+            class: "p-4 flex flex-col w-1/3",
 
-            h3 { [format_args!("{}", item)] },
+            h3 {
+                class: "font-medium leading-tight text-m h-12",
+                style: "text-align: center",
+                [title]
+            },
+
             img {
                 class: "w-24 mx-auto my-4",
                 border: "3px solid #000",
-                src: format_args!("data/img/{}", item.img),
-            }
-            div {
-                table {
-                    tr { td { "Iron: " } td { [format_args!("{}", item.skills.iron)] } }
-                    tr { td { "Mirrors: " } td { [format_args!("{}", item.skills.mirrors)] } }
-                    tr { td { "Veils: " } td { [format_args!("{}", item.skills.veils)] } }
-                    tr { td { "Pages: " } td { [format_args!("{}", item.skills.pages)] } }
-                    tr { td { "Hearts: " } td { [format_args!("{}", item.skills.hearts)] } }
+                src: format_args!("data/img/{}", img),
+            },
+
+            hr { class: "mb-4" },
+
+            [if let Some(item) = item.as_ref() { rsx! {
+                div {
+                    table {
+                        class: "table table-compact",
+                        tbody {
+                            tr { td { "Iron: " } td { [format_args!("{}", item.skills.iron)] } }
+                            tr { td { "Mirrors: " } td { [format_args!("{}", item.skills.mirrors)] } }
+                            tr { td { "Veils: " } td { [format_args!("{}", item.skills.veils)] } }
+                            tr { td { "Pages: " } td { [format_args!("{}", item.skills.pages)] } }
+                            tr { td { "Hearts: " } td { [format_args!("{}", item.skills.hearts)] } }
+                        }
+                    }
                 }
-            }
+            }} else { rsx! { div { } } }]
         }
     })
 }

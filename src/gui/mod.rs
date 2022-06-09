@@ -25,7 +25,9 @@ pub fn app(cx: Scope) -> Element {
                 stats::stats { ship: ship }
             }
 
-            ship_config::selector::modal {  }
+            // Only render the modal if there is one
+            [use_read(&cx, ship_config::selector::MODAL).is_some()
+                .then(|| rsx! { ship_config::selector::modal {  } })]
         }
     })
 }
