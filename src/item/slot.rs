@@ -1,7 +1,7 @@
 use std::fmt::{self, Display, Formatter};
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Eq)]
+#[derive(Default, Debug, Serialize, Deserialize, Clone, PartialEq, Eq)]
 pub enum Slot {
     Deck,
     Forward,
@@ -14,11 +14,8 @@ pub enum Slot {
     FirstOfficer,
     Gunner,
     Surgeon,
+    #[default]
     Mascot
-}
-
-impl Default for Slot {
-    fn default() -> Self { Slot::Mascot }
 }
 
 impl Display for Slot {
